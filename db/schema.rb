@@ -10,14 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_201538) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_203037) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "board_pins", force: :cascade do |t|
+    t.bigint "pin_id", null: false
+    t.bigint "board_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_board_pins_on_board_id"
+    t.index ["pin_id"], name: "index_board_pins_on_pin_id"
+  end
+
+  create_table "boards", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.bigint "pin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pin_id"], name: "index_boards_on_pin_id"
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pins", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "rec_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rec_id"], name: "index_pins_on_rec_id"
+    t.index ["user_id"], name: "index_pins_on_user_id"
   end
 
   create_table "recs", force: :cascade do |t|
@@ -55,6 +83,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_201538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "board_pins", "boards"
+  add_foreign_key "board_pins", "pins"
+  add_foreign_key "boards", "pins"
+  add_foreign_key "boards", "users"
+  add_foreign_key "pins", "recs"
+  add_foreign_key "pins", "users"
   add_foreign_key "recs", "categories"
   add_foreign_key "recs", "users"
   add_foreign_key "reviews", "recs"
