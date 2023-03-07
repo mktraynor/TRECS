@@ -1,1 +1,30 @@
-<h1>Test </h1>
+<h1>Create a new Listing </h1>
+
+<%= simple_form_for @item do |f| %>
+
+<form class="row g-3">
+  <div class="col-md-6">
+    <%= f.input :name, class:"form-control", placeholder:"Hawaii Breach Resort", label:"Listing title" %>
+  </div>
+  <div class="col-md-6">
+     <%= f.input :category, collection: [], class:"form-select", label:"Category" %>
+  </div>
+
+  <div class="col-12">
+     <%= f.input :location, class:"form-control", placeholder:"450 Clarkson Ave, Brooklyn, NY 11203, USA", label:"Location" %>
+  </div>
+
+
+<div class="row g-3">
+  <div class="col">
+ <div class="web_ui__Card__card">
+  <div data-testid="media-select" id="photos">
+  <%# f.input :photos,  class:"u-hidden", accept:"image/*", multiple:""%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+</div>
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+  </div>
+</div>
