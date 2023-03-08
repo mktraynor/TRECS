@@ -1,15 +1,17 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def new
     @review = Review.new
     @rec = Rec.find(params[:item_id])
-    # authorize @review
+    authorize @review
   end
 
   def create
     @review = Review.new(review_params)
     @review.user = current_user
     @review.rec = Rec.find(params[:item_id])
-    # authorize @review
+    authorize @review
     if @review.save!
       redirect_to rec_path(@rec), notice: 'review request successful'
     else
@@ -18,10 +20,15 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    authorize @review
+  end
+
+  def update
+    authorize @review
   end
 
   def destroy
-    # authorize @review
+    authorize @review
     @review.destroy
     redirect_to rec_path(@rec), status: :see_other
   end
