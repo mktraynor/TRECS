@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :recs
+  has_many :recs
   validates :name, presence: true
-  validates :category, inclusion: { in: ["accommodation", "restaurants", "museums", "bars"] }
+  validates :name, inclusion: { in: ["accommodation", "restaurants", "museums", "bars"] }
 end
