@@ -4,23 +4,23 @@ class RecsController < ApplicationController
 
   def index
     @recs = Rec.all
-    # @recs = policy_scope(rec)
+    @recs = policy_scope(rec)
   end
 
   def show
     # @review = Review.new
-    # authorize @rec
+    authorize @rec
   end
 
   def new
     @rec = Rec.new
-    # authorize @rec
+    authorize @rec
   end
 
   def create
     @rec = Rec.new(rec_params)
     @rec.user = current_user
-    # authorize @rec
+    authorize @rec
     if @rec.save
       redirect_to rec_path(@rec)
     else
@@ -29,17 +29,17 @@ class RecsController < ApplicationController
   end
 
   def destroy
-    # authorize @rec
+    authorize @rec
     @rec.destroy
     redirect_to recs_path
   end
 
   def edit
-    # authorize @rec
+    authorize @rec
   end
 
   def update
-    # authorize @rec
+    authorize @rec
     @rec.update(rec_params)
     redirect_to rec_path(@rec)
     # else
