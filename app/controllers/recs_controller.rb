@@ -8,9 +8,9 @@ class RecsController < ApplicationController
   end
 
   def show
-    # @review = Review.new
-    @rec = Rec.find(params[:id])
     authorize @rec
+    @rec = Rec.find(params[:id])
+
   end
 
   def new
@@ -37,6 +37,7 @@ class RecsController < ApplicationController
 
   def edit
     authorize @rec
+    @rec = Rec.find(params[:id])
   end
 
   def update
