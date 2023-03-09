@@ -3,20 +3,45 @@
     <div class="col-sm">
       <h1><%= @rec.name %></h1>
     </div>
-    <div class="col-sm">
+    <div class="col-sm text-end">
       <h2><%= @rec.category %></h2>
+    </div>
+  </div>
+  <div class="row"> <!-- Edit & Delete buttons -->
+    <div class="col-sm text-end">
+      <% if policy(@rec).edit? %>
+        <%= link_to "Edit Rec", edit_rec_path(@rec), class: "btn btn-primary" %>
+      <% end %>
+      <% if policy(@rec).destroy? %>
+        <%= link_to "Delete Rec", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 
   <div class="row"> <!-- Photos of rec -->
+    <div class="col-sm text-center">
+      <p><br><br><br> Insert photos here <br><br><br></p>
+    </div>
   </div>
 
   <div class="row"> <!-- Description, rating, functions, etc. -->
     <div class="col-sm-9">
-      <h1><%= @rec.name %></h1>
+      <p>
+        Address: <%= @rec.address %>
+        <br><br>
+        <%= @rec.description %>
+      </p>
+      <div class="col-sm">
+        <p>Add to Wishlist</p>
+      </div>
+      <div class="col-sm">
+        <p>Visit Website</p>
+      </div>
     </div>
     <div class="col-sm-3">
-      <h2><%= @rec.category %></h2>
+      <p>
+        <!-- REC RATING -->
+      </p>
     </div>
   </div>
 
