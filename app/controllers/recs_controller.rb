@@ -4,12 +4,21 @@ class RecsController < ApplicationController
 
   def index
     @recs = Rec.all
-    @recs = policy_scope(rec)
+    @recs = policy_scope(Rec)
+    @markers = @recs.geocoded.map do |rec|
+      {
+        lat: rec.latitude,
+        lng: rec.longitude,
+        info_window: render_to_string(partial: "popup", locals: {rec: rec})
+        # image_url: helpers.asset_url("replace_with_image")
+      }
+    end
   end
 
   def show
-    # @review = Review.new
     authorize @rec
+    @rec = Rec.find(params[:id])
+
   end
 
   def new
@@ -36,6 +45,7 @@ class RecsController < ApplicationController
 
   def edit
     authorize @rec
+    @rec = Rec.find(params[:id])
   end
 
   def update

@@ -7,9 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Cleaning Recs'
-Rec.destroy_all
 
-# 20 fake users:
 puts 'Creating 15 fake Recs...'
 
   Category.create!(
