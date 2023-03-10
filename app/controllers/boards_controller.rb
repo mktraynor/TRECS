@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @boards = policy_scope(board)
+    @boards = policy_scope(Board)
   end
 
   def show
