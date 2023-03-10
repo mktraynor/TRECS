@@ -1,1 +1,17 @@
-<h1>Test </h1>
+<div class= "container-sm">
+  <div class="card" style="width: 100%">
+    <div class="card-body">
+      <h1>Edit <%= @rec.name %></h1>
+
+      <%= simple_form_for @rec do |f| %>
+        <%= f.input :name %>
+        <%# f.input :category drop down list %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.button :submit %>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

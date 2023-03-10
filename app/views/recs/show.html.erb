@@ -1,1 +1,89 @@
-<h1>Test </h1>
+<div class= "container-sm">
+  <div class="card" style="width: 100%">
+    <div class="card-body">
+
+      <div class="row"> <!-- Title & Username (NEED TO ADD USERNAME TO USER TABLE) -->
+        <div class="col-sm">
+          <h1 class="card-title"><%= @rec.name %></h1>
+        </div>
+        <div class="col-sm text-end">
+          <h4 class="card-title">@<%# @user.username %></h4>
+        </div>
+      </div>
+
+      <div class="row"> <!-- Category & Edit/Delete buttons -->
+        <div class="col-sm">
+          <h5 class="card-title"><%= @rec.category %></h5>
+        </div>
+        <div class="col-sm text-end">
+          <div class="card-text">
+            <% if policy(@rec).edit? %>
+              <%= link_to "Edit", edit_rec_path(@rec), class: "btn btn-primary" %>
+            <% end %>
+            <% if policy(@rec).destroy? %>
+              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row"> <!-- Photos -->
+        <div class="col-sm text-center">
+          <p><br><br><br> Insert photos here <br><br><br></p>
+        </div>
+      </div>
+
+      <div class="row"> <!-- Body: description, rating, functions, etc. -->
+        <div class="col-sm-9">
+          <p class="card-text">
+            Address: <%= @rec.address %>
+          <p>
+          <p class="card-text">
+            <%= @rec.description %>
+          </p>
+          <p class="card-text">
+            <button type="button" class="btn btn-primary">Add to Wishlist</button>
+            <button type="button" class="btn btn-primary">Visit Website</button>
+          </p>
+          <br>
+        </div>
+        <div class="col-sm-3">
+          <p class="card-text">
+            <!-- REC RATING -->
+          </p>
+        </div>
+      </div>
+
+      <div class="row"> <!-- Reviews -->
+        <div class="col-sm">
+          <div class="card-title">
+            <h4>Reviews</h4>
+          </div>
+          <br>
+          <ul class="list-group list-group-flush" style="width: 100%;">
+            <li class="list-group-item">
+              <p>
+                Review 1
+              </p>
+            </li>
+            <li class="list-group-item">
+              <p>
+                Review 2
+              </p>
+            </li>
+            <li class="list-group-item">
+              <p>
+                Review 3
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</div>
