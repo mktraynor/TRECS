@@ -1,0 +1,6 @@
+<h1>Create a new board <%= @board.name %></h1>
+
+  <%= simple_form_for @board do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
