@@ -17,8 +17,6 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
-    @rec = Rec.find(params[:id])
-
   end
 
   def new
@@ -45,7 +43,6 @@ class RecsController < ApplicationController
 
   def edit
     authorize @rec
-    @rec = Rec.find(params[:id])
   end
 
   def update

@@ -4,8 +4,13 @@ class BoardPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
     def show?
+      true
+    end
+
+    def create?
       return true
     end
 
@@ -13,17 +18,9 @@ class BoardPolicy < ApplicationPolicy
       return create?
     end
 
-    def create?
-      return true
-    end
-
     def destroy?
     # only the person that created the listing
       return record.user == user
-    end
-
-    def edit?
-     return update?
     end
 
     def update?
@@ -31,5 +28,8 @@ class BoardPolicy < ApplicationPolicy
       return record.user == user
     end
 
-  end
+    def edit?
+      return update?
+    end
+
 end

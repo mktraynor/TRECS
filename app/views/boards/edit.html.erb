@@ -1,0 +1,5 @@
+<h1>Edit <%= @board.name %></h1>
+  <%= simple_form_for @board do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
