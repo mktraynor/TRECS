@@ -1,22 +1,16 @@
 <h1> Recs </h1>
 
-<div class="content">
-
+<div class= "content">
   <div class= "cards">
-      <% @recs.each do |rec| %>
-        <%# cards to take up 1/3 for medium+ devices and all space for small devices %>
-          <%# div class="card h-100"%>
-          <div class="card" style="height: 100%;">
-            <div class="card-body">
-              <h5 class="card-title"><%= rec.name%> </h5>
-              <p><%= rec.address%></p>
-              <%= link_to "See more", rec_path(rec), class: "btn btn-outline-secondary" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <% @recs.each do |rec| %>
+      <div class="card">
+        <h5><%= rec.name%> </h5>
+        <p><%= rec.address%></p>
+        <%= link_to "See more", rec_path(rec), class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
   </div>
+
 
   <div style="width: 50%; height: 600px;"
     data-controller="map"
