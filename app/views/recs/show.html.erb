@@ -18,10 +18,10 @@
         <div class="col-sm text-end">
           <div class="card-text">
             <% if policy(@rec).edit? %>
-              <%= link_to "Edit", edit_rec_path(@rec), class: "btn btn-primary" %>
+              <%= link_to "Edit", edit_rec_path(@rec), class: "btn btn-auto" %>
             <% end %>
             <% if policy(@rec).destroy? %>
-              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
+              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-auto" %>
             <% end %>
           </div>
         </div>
@@ -42,8 +42,8 @@
             <%= @rec.description %>
           </p>
           <p class="card-text">
-            <button type="button" class="btn btn-primary">Add to Wishlist</button>
-            <button type="button" class="btn btn-primary">Visit Website</button>
+            <button type="button" class="btn btn-auto">Add to Wishlist</button>
+            <button type="button" class="btn btn-auto">Visit Website</button>
           </p>
           <br>
         </div>

@@ -1,4 +1,12 @@
-.btn {
-  width: 40px;
-  border-radius: 50%;
+.btn-auto {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-auto:hover {
+  background: #4D04C4;
+  color: white;
 }
