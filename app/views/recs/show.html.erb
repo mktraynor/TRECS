@@ -17,10 +17,10 @@
         <div class="col-sm text-end">
           <div>
             <% if policy(@rec).edit? %>
-              <%= link_to "Edit", edit_rec_path(@rec), class: "btn btn-auto" %>
+              <%= link_to "Edit", edit_rec_path(@rec), class: "btn-primary" %>
             <% end %>
             <% if policy(@rec).destroy? %>
-              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-auto" %>
+              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
             <% end %>
           </div>
         </div>
@@ -49,10 +49,10 @@
             <%= @rec.description %>
           </p>
           <p>
-            <%= link_to "Save Rec", "#", class: "btn btn-main" %>
-            <%= link_to "Visit Website", "#", class: "btn btn-main" %>
+            <%= link_to "Save Rec", "#", class: "btn-primary" %>
+            <%= link_to "Visit Website", "#", class: "btn-primary" %>
+            <br>
           </p>
-          <br>
         </div>
         <div class="col-sm-3">
           <p>
