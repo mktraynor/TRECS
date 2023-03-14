@@ -49,7 +49,7 @@ class RecsController < ApplicationController
   private
 
   def rec_params
-    params.require(:rec).permit(:name, :address, :description, photos: [])
+    params.require(:rec).permit(:name, :address, :links, :review, :category_id, :description, photos: [])
   end
 
   def set_rec
