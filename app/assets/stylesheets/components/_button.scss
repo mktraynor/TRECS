@@ -1,12 +1,28 @@
-.btn-auto {
+.btn-primary {
   color: white;
   padding: 8px 24px;
   border-radius: 50px;
   background: #670BFF;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
-.btn-auto:hover {
+.btn-primary:hover {
   background: #4D04C4;
   color: white;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: #4A4A4A;
 }

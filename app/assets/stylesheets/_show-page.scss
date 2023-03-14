@@ -1,0 +1,17 @@
+.show-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.showcard {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border: 1px solid lightgrey;
+  p {
+    font-size: 20px;
+  }
+  color: black;
+  background-color: white;
+  padding-top: 15px !important;
+}

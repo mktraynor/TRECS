@@ -1,54 +1,61 @@
-<div class= "container-sm">
-  <div class="card" style="width: 100%">
-    <div class="card-body">
-
+<div class= "show-container">
+  <div class="showcard">
+    <div class= "container-sm">
       <div class="row"> <!-- Title & Username (NEED TO ADD USERNAME TO USER TABLE) -->
-        <div class="col-sm">
-          <h1 class="card-title"><%= @rec.name %></h1>
+        <div class="col-sm-6">
+          <h1><strong><%= @rec.name %></strong></h1>
         </div>
-        <div class="col-sm text-end">
-          <h4 class="card-title">@<%# @user.username %></h4>
+        <div class="col-sm-6 text-end">
+          <h4>@<%# @user.username %></h4>
         </div>
       </div>
 
       <div class="row"> <!-- Category & Edit/Delete buttons -->
         <div class="col-sm">
-          <h5 class="card-title"><%= @rec.category %></h5>
+          <h5><%= @rec.category %></h5>
         </div>
         <div class="col-sm text-end">
-          <div class="card-text">
+          <div>
             <% if policy(@rec).edit? %>
-              <%= link_to "Edit", edit_rec_path(@rec), class: "btn btn-auto" %>
+              <%= link_to "Edit", edit_rec_path(@rec), class: "btn-primary" %>
             <% end %>
             <% if policy(@rec).destroy? %>
-              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-auto" %>
+              <%= link_to "Delete", rec_path(@rec), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
             <% end %>
           </div>
         </div>
       </div>
 
-      <div class="row"> <!-- Photos -->
-        <div class="col-sm text-center">
-          <p><br><br><br> Insert photos here <br><br><br></p>
+      <div class="row" style="height: 500px;"> <!-- Photos & Map -->
+        <div class="col-sm-8">
+          <img class="d-block w-100" src="/assets/restaurant_example.jpg" alt="Photo">
+        </div>
+        <div class="col-sm-4">
+          <div style="width: 100%; height: 100%;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
 
       <div class="row"> <!-- Body: description, rating, functions, etc. -->
         <div class="col-sm-9">
-          <p class="card-text">
-            Address: <%= @rec.address %>
+          <br>
           <p>
-          <p class="card-text">
+            <strong>Address:</strong> <%= @rec.address %>
+          </p>
+          <p>
             <%= @rec.description %>
           </p>
-          <p class="card-text">
-            <button type="button" class="btn btn-auto">Add to Wishlist</button>
-            <button type="button" class="btn btn-auto">Visit Website</button>
+          <p>
+            <%= link_to "Save Rec", "#", class: "btn-primary" %>
+            <%= link_to "Visit Website", "#", class: "btn-primary" %>
+            <br>
           </p>
-          <br>
         </div>
         <div class="col-sm-3">
-          <p class="card-text">
+          <p>
             <!-- REC RATING -->
           </p>
         </div>
@@ -56,8 +63,8 @@
 
       <div class="row"> <!-- Reviews -->
         <div class="col-sm">
-          <div class="card-title">
-            <h4>Reviews</h4>
+          <div>
+            <h4><strong>Reviews</strong></h4>
           </div>
           <br>
           <ul class="list-group list-group-flush" style="width: 100%;">
