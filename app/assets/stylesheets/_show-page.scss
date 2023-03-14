@@ -1,4 +1,4 @@
-.show_container {
+.show-container {
   display: flex;
   justify-content: space-around;
 }
@@ -6,8 +6,9 @@
 .showcard {
   display: flex;
   justify-content: space-around;
+  width: 100%;
   border: 1px solid lightgrey;
   color: black;
   background-color: white;
-  padding-top: 5px !important;
+  padding-top: 15px !important;
 }
