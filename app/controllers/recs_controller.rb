@@ -3,8 +3,17 @@ class RecsController < ApplicationController
   before_action :set_rec, only: [:show, :destroy, :edit, :update]
 
   def index
-    @recs = Rec.all
-    @recs = policy_scope(rec)
+    if params[:query].present?
+      sql_query = <<~SQL
+        recs.title @@ :query
+        OR recs.synopsis @@ :query
+        OR users.first_name @@ :query
+        OR users.last_name @@ :query
+      SQL
+      @recs = Rec.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @recs = Rec.all
+    end
   end
 
   def show
