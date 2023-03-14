@@ -1,0 +1,13 @@
+.show_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.showcard {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid lightgrey;
+  color: black;
+  background-color: white;
+  padding-top: 5px !important;
+}
