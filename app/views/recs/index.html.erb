@@ -1,18 +1,31 @@
 <div class= "content">
-  <div class= "cards">
-    <% @recs.each do |rec| %>
-      <div class="card">
-        <h5><strong><%= rec.name%></strong></h5>
-        <p><%= rec.address%></p>
-        <%= link_to "See more", rec_path(rec), class: "btn-ghost" %>
+  <div class= "container-sm">
+
+    <div class="col-sm-8">
+        <div class= "cards">
+        <% @recs.each do |rec| %>
+          <div class="card">
+            <h5><strong><%= rec.name%></strong></h5>
+            <p><%= rec.address%></p>
+            <%= link_to "See more", rec_path(rec), class: "btn-ghost" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="index-map">
+        <div style="width: 50%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
+
   </div>
 
 
-  <div style="width: 50%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+
+
+
 </div>
