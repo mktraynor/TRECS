@@ -1,12 +1,21 @@
 <div class= "content">
-  <div class= "container-sm">
+  <!-- <div class= "container"> -->
 
     <div class="col-sm-8">
         <div class= "cards">
         <% @recs.each do |rec| %>
           <div class="card">
-            <h5><strong><%= rec.name%></strong></h5>
-            <p><%= rec.address%></p>
+            <div class="card-title">
+              <h5><strong><%= rec.name%></strong></h5>
+            </div>
+            <div class="card-img">
+              <%# image_tag "restaurant_example.jpg" %>
+            </div>
+            <div class="card-body">
+              <p><%= rec.description%></p>
+              <p><%= rec.address%></p>
+              <p><%# rec.rating%></p>
+            </div>
             <%= link_to "See more", rec_path(rec), class: "btn-ghost" %>
           </div>
         <% end %>
@@ -15,14 +24,15 @@
 
     <div class="col-sm-4">
       <div class="index-map">
-        <div style="width: 50%; height: 600px;"
+        <div style="width: 100%; height: 100%;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+      </div>
     </div>
 
-  </div>
+  <!-- </div> -->
 
 
 

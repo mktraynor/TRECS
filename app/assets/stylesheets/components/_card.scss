@@ -4,8 +4,14 @@
   border: 1px solid lightgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: space-around;
   font-size: 12px;
   color: black;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
 }
