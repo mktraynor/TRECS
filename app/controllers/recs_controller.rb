@@ -17,6 +17,7 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
+    # @is_pinned = @rec.is_pinned(current_user)
   end
 
   def new
@@ -52,6 +53,9 @@ class RecsController < ApplicationController
     # else
     # render "edit" #will go back / stay on the same page
   end
+
+
+
 
   private
 

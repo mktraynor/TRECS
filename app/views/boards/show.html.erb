@@ -3,10 +3,25 @@
 </div>
 
 <div>
+<h3><%= @board.pins.count%> pins </h3>
+</div>
+
+<p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
+
+
+<div>
   <% if policy(@board).edit? %>
     <%= link_to "Edit", edit_board_path(@board), class: "btn btn-primary" %>
   <% end %>
   <% if policy(@board).destroy? %>
     <%= link_to "Delete", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div>
+  <% @board.pins.each do |pin| %>
+    <% pin = Pin.find_by(board: @board, rec: rec) %>
+    <p><%= rec.name %></p>
+    <p><%= rec.rating %></p>
   <% end %>
 </div>

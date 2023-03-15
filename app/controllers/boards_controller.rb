@@ -8,7 +8,10 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @pin = Pin.new
     authorize @board
+    @board.user = current_user
+    # show all recs that have pins related to the user and the board
   end
 
   def create
