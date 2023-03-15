@@ -12,7 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%# link_to "Home", "#", class: "nav-link" %>
+            <div class="boards-btn">
+              <%= link_to "Boards", boards_path, class: "btn-primary" %>
+            </div>
           </li>
           <li class="nav-item">
             <%# link_to "Messages", "#", class: "nav-link" %>
