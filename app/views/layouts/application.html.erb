@@ -7,6 +7,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!-- app/views/layouts/application.html.erb -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <!-- rename the-script into script after copy-paste -->
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
@@ -14,5 +18,6 @@
   <%= render "shared/navbar" %>
   <%= render "shared/flashes" %>
   <%= yield %>
+  <%= render "shared/footer" %>
   </body>
 </html>

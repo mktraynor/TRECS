@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_190239) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_203028) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,22 +42,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_190239) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "board_pins", force: :cascade do |t|
-    t.bigint "pin_id", null: false
-    t.bigint "board_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_board_pins_on_board_id"
-    t.index ["pin_id"], name: "index_board_pins_on_pin_id"
-  end
-
   create_table "boards", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
-    t.bigint "pin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pin_id"], name: "index_boards_on_pin_id"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
@@ -70,8 +59,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_190239) do
   create_table "pins", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "rec_id", null: false
+    t.bigint "board_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_pins_on_board_id"
     t.index ["rec_id"], name: "index_pins_on_rec_id"
     t.index ["user_id"], name: "index_pins_on_user_id"
   end
@@ -84,6 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_190239) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["category_id"], name: "index_recs_on_category_id"
     t.index ["user_id"], name: "index_recs_on_user_id"
   end
@@ -113,10 +106,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_190239) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "board_pins", "boards"
-  add_foreign_key "board_pins", "pins"
-  add_foreign_key "boards", "pins"
   add_foreign_key "boards", "users"
+  add_foreign_key "pins", "boards"
   add_foreign_key "pins", "recs"
   add_foreign_key "pins", "users"
   add_foreign_key "recs", "categories"
