@@ -11,11 +11,14 @@ class PinsController < ApplicationController
   def create
     @pin = Pin.new(pin_params)
     @pin.user = current_user # create a pin belonging to user
-    @board.user = current_user # define board as board belonging to user
+    @board.user = current_user
+    @pin.rec = Item.find(params[:rec_id])
+    # @rec = @pin.rec # save this rec as the rec_id for this pin
+    @pin.board = Board.find(params[:rec_id])
+    # @pin.board = @board  # create a pin belonging to the board (which we have defined as belonging to user)
+    # define board as board belonging to user
     authorize @pin
     if @pin.save
-      @rec = @pin.rec # save this rec as the rec_id for this pin
-      @pin.board = @board # create a pin belonging to the board (which we have defined as belonging to user)
       # pin is saved to all pins board (you know the board id)
       # notice that it has been saved
       # redirect_to board_path(@board)
