@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to recs_path, class: "navbar-brand" do %>
-      <%= image_tag "/assets/trecs_logo.png" %>
+      <%= image_tag "trecs_logo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%# link_to "Home", "#", class: "nav-link" %>
+            <div class="boards-btn">
+              <%= link_to "Boards", boards_path, class: "btn-primary" %>
+            </div>
           </li>
           <li class="nav-item">
             <%# link_to "Messages", "#", class: "nav-link" %>
