@@ -17,6 +17,14 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
+    @markers = [
+      {
+        lat: @rec.latitude,
+        lng: @rec.longitude,
+        info_window: render_to_string(partial: "popup", locals: {rec: @rec})
+        # image_url: helpers.asset_url("replace_with_image")
+      }
+    ]
   end
 
   def new
