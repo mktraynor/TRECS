@@ -1,1 +1,71 @@
 // Specific CSS for your home-page
+#home-search {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  padding: 70px;
+  height: 600px;
+  background-image: url("6FF1A7CF-3DA4-4FC8-8600-892916ECC2BB_1_201_a.jpeg");
+  background-size: cover;
+  border-radius: 5px;
+  align-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#home-search-content {
+  padding-top: 100px;
+}
+
+.search-placeholder {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: white;
+  color: #5C706F;
+  width: 55%;
+  margin-left: auto;
+  margin-bottom: 15px;
+  margin-right: auto;
+  box-shadow: 3px 3px 5px #006D85;
+
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+.home-search-category {
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.cat_one {
+  font-size: 25px;
+  background-color: #E9F1F7;
+  color: #006D85;
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 5px #006D85;
+
+}
+
+.home-recents {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
