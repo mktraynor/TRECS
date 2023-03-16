@@ -20,8 +20,6 @@
 
 <div>
   <% @board.pins.each do |pin| %>
-    <% pin = Pin.find_by(board: @board, rec: rec) %>
-    <p><%= rec.name %></p>
-    <p><%= rec.rating %></p>
+    <p><%= pin.rec.name %></p>
   <% end %>
 </div>

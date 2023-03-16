@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :recs
   has_many :reviews
   has_many :pins
-  has_many :boards
+  has_one :board # changing to singular to debug issue with pins previously plural
 end
