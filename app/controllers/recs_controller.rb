@@ -17,6 +17,7 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
+    # @is_pinned = @rec.is_pinned(current_user)
     @markers = [
       {
         lat: @rec.latitude,
@@ -61,6 +62,9 @@ class RecsController < ApplicationController
     # else
     # render "edit" #will go back / stay on the same page
   end
+
+
+
 
   private
 

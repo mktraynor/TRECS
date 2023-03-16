@@ -1,17 +1,23 @@
-
-<h1> Daily inspiration </h1>
-<h3> All Boards </h3>
-
-<div>
-<%= link_to "＋", new_board_path, class: "btn btn-outline-secondary" %>
-</div>
-
 <div class= "content">
-  <div class= "cards">
+
+  <div class="col-sm-8">
+    <div class= "cards">
     <% @boards.each do |board| %>
       <div class="card">
-        <h5><%= board.name%> </h5>
-        <%= link_to "See more", board_path(board), class: "btn btn-outline-secondary" %>
+        <div class="card-title">
+              <br>
+              <h5><strong><%= board.name%></strong></h5>
+        </div>
+        <div class="card-body">
+        <%= link_to "See more", board_path(board), class: "btn-ghost" %>
+        </div>
       </div>
     <% end %>
+    </div>
   </div>
+
+  <div>
+  <%= link_to "Create new board", new_board_path, class: "btn-ghost" %>
+  </div>
+
+</div>
