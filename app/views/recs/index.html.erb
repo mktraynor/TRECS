@@ -8,16 +8,16 @@
             <div class="card-title">
               <br>
               <h5><strong><%= rec.name%></strong></h5>
+              <p><%= rec.rating%></p>
             </div>
             <div class="card-img">
               <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
             </div>
             <div class="card-body">
               <p><%= rec.description%></p>
-              <p><%= rec.address%></p>
-              <p><%= rec.rating%></p>
+              <p><%= rec.address %></p>
+              <%= link_to "See more", rec_path(rec), class: "btn-ghost" %>
             </div>
-            <%= link_to "See more", rec_path(rec), class: "btn-ghost" %>
           </div>
         <% end %>
       </div>
