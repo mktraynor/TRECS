@@ -1,0 +1,13 @@
+.newcard {
+  display: flex;
+  justify-content: space-around;
+  width:800px;
+  border: 1px solid lightgrey;
+  p {
+    font-size: 20px;
+  }
+  color: black;
+  background-color: white;
+  padding-top: 15px !important;
+  margin: 50px
+}
