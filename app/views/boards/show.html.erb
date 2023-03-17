@@ -1,7 +1,7 @@
 <div class= "showcard">
     <div class= "container-sm">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <h1><strong><%= @board.name %></strong></h1>
           <p><%= @board.pins.count%> pins</p>
           <p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
@@ -17,26 +17,27 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class= "cards">
-    <% @board.pins.each do |pin| %>
-      <div class="card">
-        <div class="card-title">
-          <br>
-          <h5><strong><%= pin.rec.name%></strong></h5>
-        </div>
-        <div class="card-img">
-          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
-        </div>
-        <div class="card-body">
-          <p><%= pin.rec.description%></p>
-          <p><%= pin.rec.address %></p>
-          <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
+      <div class= "row">
+        <div class= "board-cards">
+        <% @board.pins.each do |pin| %>
+          <div class="card">
+            <div class="card-title">
+              <br>
+              <h5><strong><%= pin.rec.name%></strong></h5>
+            </div>
+            <div class="card-img">
+              <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+            </div>
+            <div class="card-body">
+              <p><%= pin.rec.description%></p>
+              <p><%= pin.rec.address %></p>
+              <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
+            </div>
+          </div>
+        <% end %>
         </div>
       </div>
-    <% end %>
     </div>
-  </div>
 
 </div>

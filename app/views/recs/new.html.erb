@@ -13,12 +13,21 @@
             <div class="col-md-6">
               <%= f.input :name, class:"form-control", placeholder:"Billy's Hot Dog Cart", label:"Listing title" %>
             </div>
+
             <div class="col-md-6">
               <%= f.association :category, collection: Category.all, input_html: {class: "form-select"} %>
             </div>
 
+            <div class="col-md-6">
+              <%= f.input :rating, class:"form-control", placeholder:"9.8", label:"Rating (out of 10)" %>
+            </div>
+
             <div class="col-12">
               <%= f.input :address, class:"form-control", placeholder:"327 Central Park West, New York, NY 10025, United States", label:"Location" %>
+            </div>
+
+          <div class="col-md-6">
+              <%= f.input :website, class:"form-control", placeholder:"https://www.kamehachi.com/", label:" Website" %>
             </div>
 
 
@@ -27,7 +36,7 @@
           <div class="web_ui__Card__card">
             <div data-testid="media-select" id="photos">
             <%# f.input :photos,  class:"u-hidden", accept:"image/*", multiple:""%>
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photo(s)" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: false }, label: "Upload photo" %>
             </div>
           </div>
             </div>
