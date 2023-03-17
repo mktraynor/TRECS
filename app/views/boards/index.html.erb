@@ -11,11 +11,14 @@
       <% @boards.each do |board| %>
       <div class="card">
         <div class="card-title">
-            <br>
-            <h5><strong><%= board.name%></strong></h5>
+          <br>
+          <h5><strong><%= board.name %></strong></h5>
         </div>
-        <div class="card-body" style="text-align: bottom;">
-          <p><%= link_to "See more", board_path(board), class: "btn-primary" %></p>
+        <div class="card-img">
+          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+        </div>
+        <div class="card-body">
+          <%= link_to "See More", board_path(board), class: "btn-primary" %>
         </div>
       </div>
       <% end %>
