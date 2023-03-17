@@ -1,33 +1,44 @@
-<h1>Create a new Listing </h1>
+<div class= "content">
 
-<%= simple_form_for @rec do |f| %>
+    <div class= "container-sm">
+      <div class="row"> <!-- Title & Username (NEED TO ADD USERNAME TO USER TABLE) -->
+          <h1><strong>Share a recommendation </strong></h1>
+      </div>
+      </div>
+    </div>
 
-<form class="row g-3">
-  <div class="col-md-6">
-    <%= f.input :name, class:"form-control", placeholder:"Hawaii Breach Resort", label:"Listing title" %>
-  </div>
-  <div class="col-md-6">
-     <%= f.association :category, collection: Category.all, input_html: {class: "form-select"} %>
-  </div>
+    <div class= "newcard">
+      <div>
+        <%= simple_form_for @rec do |f| %>
 
-  <div class="col-12">
-     <%= f.input :address, class:"form-control", placeholder:"450 Clarkson Ave, Brooklyn, NY 11203, USA", label:"Location" %>
-  </div>
+        <form class="row g-3">
+          <div class="col-md-6">
+            <%= f.input :name, class:"form-control", placeholder:"Hawaii Beach Resort", label:"Listing title" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.association :category, collection: Category.all, input_html: {class: "form-select"} %>
+          </div>
+
+          <div class="col-12">
+            <%= f.input :address, class:"form-control", placeholder:"450 Clarkson Ave, Brooklyn, NY 11203, USA", label:"Location" %>
+          </div>
 
 
-<div class="row g-3">
-  <div class="col">
- <div class="web_ui__Card__card">
-  <div data-testid="media-select" id="photos">
-  <%# f.input :photos,  class:"u-hidden", accept:"image/*", multiple:""%>
-  <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photo(s)" %>
-  </div>
+        <div class="row g-3">
+          <div class="col">
+        <div class="web_ui__Card__card">
+          <div data-testid="media-select" id="photos">
+          <%# f.input :photos,  class:"u-hidden", accept:"image/*", multiple:""%>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Upload photo(s)" %>
+          </div>
+        </div>
+          </div>
+          <%= f.button :submit, class:"btn-primary"%>
+        </div>
+        </form>
+
+        <% end %>
+      </div>
+      </div>
+
 </div>
-  </div>
-
-  <%= f.button :submit, class:"btn btn-primary"%>
-
-</div>
-</form>
-
-<% end %>
