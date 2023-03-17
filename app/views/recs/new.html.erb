@@ -11,14 +11,14 @@
 
           <form class="row g-3">
             <div class="col-md-6">
-              <%= f.input :name, class:"form-control", placeholder:"Hawaii Beach Resort", label:"Listing title" %>
+              <%= f.input :name, class:"form-control", placeholder:"Billy's Hot Dog Cart", label:"Listing title" %>
             </div>
             <div class="col-md-6">
               <%= f.association :category, collection: Category.all, input_html: {class: "form-select"} %>
             </div>
 
             <div class="col-12">
-              <%= f.input :address, class:"form-control", placeholder:"450 Clarkson Ave, Brooklyn, NY 11203, USA", label:"Location" %>
+              <%= f.input :address, class:"form-control", placeholder:"327 Central Park West, New York, NY 10025, United States", label:"Location" %>
             </div>
 
 
