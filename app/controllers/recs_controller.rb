@@ -26,7 +26,7 @@ class RecsController < ApplicationController
         # image_url: helpers.asset_url("replace_with_image")
       }
     ]
-    @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
+    # @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
   end
 
   def new

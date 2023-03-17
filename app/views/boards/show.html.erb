@@ -1,25 +1,42 @@
 <div>
-<h1><%= @board.name %></h1>
-</div>
+    <div class= "container-sm">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1><strong><%= @board.name %></strong></h1>
+          <p><%= @board.pins.count%> pins</p>
+          <p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
+        </div>
+        <div class="col-sm-6 text-end">
+          <div>
+            <% if policy(@board).edit? %>
+              <%= link_to "Edit", edit_board_path(@board), class: "btn-primary" %>
+            <% end %>
+            <% if policy(@board).destroy? %>
+              <%= link_to "Delete", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div>
-<h3><%= @board.pins.count%> pins </h3>
-</div>
+    <div class= "cards">
+    <% @board.pins.each do |pin| %>
+      <div class="card">
+        <div class="card-title">
+          <br>
+          <h5><strong><%= pin.rec.name%></strong></h5>
+        </div>
+        <div class="card-img">
+          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+        </div>
+        <div class="card-body">
+          <p><%= pin.rec.description%></p>
+          <p><%= pin.rec.address %></p>
+          <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
 
-<p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
-
-
-<div>
-  <% if policy(@board).edit? %>
-    <%= link_to "Edit", edit_board_path(@board), class: "btn btn-primary" %>
-  <% end %>
-  <% if policy(@board).destroy? %>
-    <%= link_to "Delete", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
-  <% end %>
-</div>
-
-<div>
-  <% @board.pins.each do |pin| %>
-    <p><%= pin.rec.name %></p>
-  <% end %>
 </div>
