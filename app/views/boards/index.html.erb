@@ -1,23 +1,35 @@
-<div class= "content">
+<div class="col-sm">
+  <br>
+  <h1 style="text-align: center;"><strong>All Boards</strong></h1>
+  <br>
+</div>
 
-  <div class="col-sm-8">
-    <div class= "cards">
-    <% @boards.each do |board| %>
+<div class= "boards-content">
+
+  <div class="col-sm-12">
+    <div class= "board-cards">
+      <% @boards.each do |board| %>
       <div class="card">
         <div class="card-title">
-              <br>
-              <h5><strong><%= board.name%></strong></h5>
+            <br>
+            <h5><strong><%= board.name%></strong></h5>
         </div>
-        <div class="card-body">
-        <%= link_to "See more", board_path(board), class: "btn-ghost" %>
+        <div class="card-body" style="text-align: bottom;">
+          <p><%= link_to "See more", board_path(board), class: "btn-primary" %></p>
         </div>
       </div>
-    <% end %>
+      <% end %>
+
+      <div class="card">
+        <div class="card-title">
+          <br>
+          <h6><%= link_to "Create new board", new_board_path, class: "btn-primary" %></h6>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div>
-  <%= link_to "Create new board", new_board_path, class: "btn-ghost" %>
-  </div>
+
 
 </div>

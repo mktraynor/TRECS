@@ -1,0 +1,12 @@
+.boards-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.board-cards {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 10px 10px;
+  padding: 10px;
+}

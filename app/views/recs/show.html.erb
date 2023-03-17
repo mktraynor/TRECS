@@ -52,7 +52,7 @@
           <p class="card-text">
 
             <%= link_to "Save Rec", rec_pins_path(@rec), data:{turbo_method: :post}, params: { pin: { rec_id: @rec}}, class: "btn-primary" %>
-            <%= link_to "Visit Website", "#", class: "btn-primary" %>
+            <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
             <br>
           </p>
         </div>
