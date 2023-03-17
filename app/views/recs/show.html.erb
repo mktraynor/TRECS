@@ -6,7 +6,7 @@
           <h1><strong><%= @rec.name %></strong></h1>
         </div>
         <div class="col-sm-6 text-end">
-          <h4>@Username<%# @user.username %></h4>
+          <h4>@mktraynor<%# @user.username %></h4>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
 
       <div class="row" style="height: 500px;"> <!-- Photos & Map -->
         <div class="col-sm-7">
-          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+          <%# cl_image_tag @rec.photo.key, height: 100px, width: auto, crop: :fill if @rec.photo.attached? %>
         </div>
         <div class="col-sm-5">
           <div style="width: 100%; height: 100%;"
@@ -52,7 +52,7 @@
           <p class="card-text">
 
             <%= link_to "Save Rec", rec_pins_path(@rec), data:{turbo_method: :post}, params: { pin: { rec_id: @rec}}, class: "btn-primary" %>
-            <%= link_to "Visit Website", "#", class: "btn-primary" %>
+            <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
             <br>
           </p>
         </div>
