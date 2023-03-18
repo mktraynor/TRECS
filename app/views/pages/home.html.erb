@@ -1,9 +1,20 @@
 <div class="flex-page">
   <div id="home-search">
     <div id="home-search-content">
-      <div class="search-placeholder">
+      <!-- <div class="search-placeholder">
         <p><i class="fas fa-search"></i>    Where do you want to go?</p>
-      </div>
+      </div> -->
+
+      <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          id: "search-form-homepage",
+          placeholder: "What do you want to search?"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
       <div class="home-search-category">
         <i class="fas fa-hotel cat_one"></i>
         <i class="fas fa-landmark cat_one"></i>
