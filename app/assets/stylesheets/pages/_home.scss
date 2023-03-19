@@ -22,7 +22,7 @@
   border-radius: 50px;
   background-color: #E9F1F7;
   border-color: #E9F1F7;
-  color: #5C706F;
+  color: #3E4E50;
   margin-right: 10px;
   box-shadow: 3px 3px 5px #006D85;
   font-size: 18px;
@@ -64,6 +64,10 @@
   display: flex;
   justify-content: space-around;
   color: white;
+
+  :hover {
+    color: $orange;
+  }
 }
 
 .cat_one {
@@ -73,7 +77,6 @@
   padding: 15px;
   border-radius: 50px;
   box-shadow: 3px 3px 5px #006D85;
-
 }
 
 .home-recents {
