@@ -3,8 +3,11 @@ class RecsController < ApplicationController
   before_action :set_rec, only: [:show, :destroy, :edit, :update]
 
   def index
-    @recs = Rec.all
-    @recs = policy_scope(Rec)
+    @recs = if params[:query].present?
+              policy_scope(Rec).search_by_name_and_description(params[:query])
+            else
+              policy_scope(Rec)
+            end
     @markers = @recs.geocoded.map do |rec|
       {
         lat: rec.latitude,
