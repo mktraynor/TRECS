@@ -1,6 +1,7 @@
 class RecsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_rec, only: [:show, :destroy, :edit, :update]
+  # before_action :set_board, only: [:show]
 
   def index
     @recs = if params[:query].present?
@@ -30,6 +31,7 @@ class RecsController < ApplicationController
       }
     ]
     # @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
+
   end
 
   def new
@@ -78,4 +80,8 @@ class RecsController < ApplicationController
   def set_rec
     @rec = Rec.find(params[:id])
   end
+
+  # def set_board
+  #   @board = Board.find(params[:board_id])
+  # end
 end
