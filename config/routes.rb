@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   resources :pins, only: [:edit, :update, :destroy]
 
-  resources :categories, only: [:show]
+  resources :categories, only: [:show, :create, :new]
 
 end

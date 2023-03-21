@@ -15,9 +15,7 @@ Category.destroy_all
 puts 'Creating 15 fake Recs...'
 
   category = Category.create!(
-    name: "restaurants",
-    created_at: Time.now,
-    updated_at: Time.now
+    name: "restaurants"
   )
 
   user = User.create!(
