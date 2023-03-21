@@ -1,12 +1,96 @@
-.boards-content {
+.board-title {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  color: $gray;
+}
+
+.new-card {
+  background-image: url("ian-dooley-hpTH5b6mo2s-unsplash 3.jpg");
+  background-size: contain;
+}
+
+.btn-new-board {
+  box-shadow: 0 0 7px #006D85;
+}
+
+.boards-content {
 }
 
 .board-cards {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  gap: 10px 10px;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.card-board {
+  width: 250px;
+  height: 200px;
+  margin-bottom: 25px;
+  padding: 15px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.board-to-pin {
+  font-size: 14px;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  width: 100%;
+}
+
+.imgs {
+  height: 100%;
+  width: 100%;
+}
+
+.img {
+  border-radius: 5px;
+  border-color: black;
+  width: 100px;
+  background-color: $light-gray;
+  margin: 3px;
+}
+
+.big-img {
+  height: 100%;
+}
+
+.small_imgs{
+  height: 100%;
+}
+
+.small-img {
+  height: 48px;
+}
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+#board-page {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  height: 600px;
+  border-radius: 5px;
+  align-content: center;
+}
+
+#create-board {
+  padding: 9.5px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: $blue;
 }

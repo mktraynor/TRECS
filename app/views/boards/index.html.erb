@@ -1,38 +1,41 @@
-<div class="col-sm">
-  <br>
-  <h1 style="text-align: center;"><strong>All Boards</strong></h1>
-  <br>
-</div>
-
-<div class= "boards-content">
-
-  <div class="col-sm-12">
-    <div class= "board-cards">
-      <% @boards.each do |board| %>
-      <div class="card">
-        <div class="card-title">
-          <br>
-          <h5><strong><%= board.name %></strong></h5>
-        </div>
-        <div class="card-img">
-          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
-        </div>
-        <div class="card-body">
-          <%= link_to "See More", board_path(board), class: "btn-primary" %>
-        </div>
-      </div>
-      <% end %>
-
-      <div class="card">
-        <div class="card-title">
-          <br>
-          <h6><%= link_to "Create new board", new_board_path, class: "btn-primary" %></h6>
-        </div>
-      </div>
-
-    </div>
+<div id="board-page">
+  <div class="board-title">
+    <h1><strong>All Boards</strong></h1>
+    <h6><%= link_to "+", new_board_path, class: "btn-primary", id: "create-board" %></h6>
   </div>
 
-
-
+  <!-- <div class= "boards-content col-sm-4"> -->
+      <div class= "board-cards row row-cols-3">
+        <% @boards.each do |board| %>
+          <div class="card card-board border-0">
+            <!-- <div class="card-title">
+              <br>
+              <h5><strong><%= board.name %></strong></h5>
+            </div> -->
+            <div class="card-img">
+              <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+              <div class="imgs">
+                <div class="img big-img">
+                </div>
+              </div>
+              <div class="imgs small-imgs">
+                <div class="img small-img">
+                </div>
+                <div class="img small-img">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+        <div class="card card-board new-card">
+          <div class="card-title">
+            <br>
+            <h6><%= link_to "New board", new_board_path, class: "btn-primary btn-new-board" %></h6>
+          </div>
+        </div>
+      </div>
+  <!-- </div> -->
 </div>
