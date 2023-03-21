@@ -9,10 +9,10 @@
         <div class="col-sm-6 text-end">
           <div>
             <% if policy(@board).edit? %>
-              <%= link_to "Edit", edit_board_path(@board), class: "btn-primary" %>
+              <%= link_to "Edit board", edit_board_path(@board), class: "btn-primary" %>
             <% end %>
             <% if policy(@board).destroy? %>
-              <%= link_to "Delete", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
+              <%= link_to "Delete board", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
             <% end %>
           </div>
         </div>
@@ -33,6 +33,7 @@
               <p><%= pin.rec.description%></p>
               <p><%= pin.rec.address %></p>
               <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
+              <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost" %>
             </div>
           </div>
         <% end %>
