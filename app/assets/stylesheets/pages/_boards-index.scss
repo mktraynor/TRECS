@@ -94,3 +94,14 @@
   font-weight: bold;
   background-color: $blue;
 }
+
+#board-page {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  height: 600px;
+  border-radius: 5px;
+  align-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

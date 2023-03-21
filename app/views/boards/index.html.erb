@@ -39,3 +39,39 @@
       </div>
   <!-- </div> -->
 </div>
+    <h6><%= link_to "New board", new_board_path, class: "btn-primary" %></h6>
+  </div>
+
+  <div class= "boards-content">
+
+    <div class="col-sm-12">
+      <div class= "board-cards">
+        <% @boards.each do |board| %>
+        <div class="card">
+          <div class="card-title">
+            <br>
+            <h5><strong><%= board.name %></strong></h5>
+          </div>
+          <div class="card-img">
+            <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+          </div>
+          <div class="card-body">
+            <%= link_to "See More", board_path(board), class: "btn-primary" %>
+          </div>
+        </div>
+        <% end %>
+
+        <!-- <div class="card">
+          <div class="card-title">
+            <br>
+            <h6><%= link_to "Create new board", new_board_path, class: "btn-primary" %></h6>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+
+
+
+  </div>
+

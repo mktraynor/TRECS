@@ -50,8 +50,9 @@
             <%= @rec.description %>
           </p>
           <p class="card-text">
-
-            <%= link_to "Save Rec", rec_pins_path(@rec), data:{turbo_method: :post}, params: { pin: { rec_id: @rec}}, class: "btn-primary" %>
+            <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
+              Save rec
+            </button>
             <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
             <br>
           </p>
@@ -92,8 +93,6 @@
 
     </div>
   </div>
-
-
-
-
 </div>
+
+<%= render "modal", board: @board, pin: @pin%>
