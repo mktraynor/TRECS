@@ -10,6 +10,10 @@ class RecPolicy < ApplicationPolicy
     return true
   end
 
+  def index
+    return true
+  end
+
   def new?
     return create?
   end
