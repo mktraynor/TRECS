@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-sm">
           <h1><strong><%= @board.name %></strong></h1>
-          <p><%= @board.pins.count%> pins</p>
+          <p><%= @board.pins.count %> pins</p>
           <p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
         </div>
         <div class="col-sm-6 text-end">
@@ -20,25 +20,29 @@
 
       <div class= "row">
         <div class= "board-cards">
-        <% @board.pins.each do |pin| %>
-          <div class="card">
-            <div class="card-title">
-              <br>
-              <h5><strong><%= pin.rec.name%></strong></h5>
+          <% @board.pins.each do |pin| %>
+            <div class="card">
+              <div class="card-title">
+                <br>
+                <h5><strong><%= pin.rec.name%></strong></h5>
+              </div>
+              <div class="card-img">
+                <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+              </div>
+              <div class="card-body">
+                <p><%= pin.rec.description%></p>
+                <p><%= pin.rec.address %></p>
+                <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
+                <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost" %>
+                  <button type="button" class="btn-ghost" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
+                    Move pin
+                  </button>
+              </div>
             </div>
-            <div class="card-img">
-              <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
-            </div>
-            <div class="card-body">
-              <p><%= pin.rec.description%></p>
-              <p><%= pin.rec.address %></p>
-              <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
-              <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost" %>
-            </div>
-          </div>
-        <% end %>
+            <%= render "modal", boards: current_user.boards, pin: pin %>
+          <% end %>
         </div>
       </div>
     </div>
-
+  </div>
 </div>

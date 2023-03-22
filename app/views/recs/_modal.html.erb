@@ -9,10 +9,10 @@
       <div class="modal-body">
         <div class="list-group">
           <% current_user.boards.each do |board|  %>
-            <%= link_to rec_pins_path(@rec, board_id: board.id), class:"list-group-item list-group-item-action", data:{turbo_method: :post} do %>
+            <%= link_to rec_pins_path(@rec, board_id: board.id), class:"list-group-item list-group-item-action", data: {turbo_method: :post} do %>
               <%= board.name %>
             <% end %>
-          <% end  %>
+          <% end %>
         </div>
       </div>
       <div class="modal-footer">
