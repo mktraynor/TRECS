@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
-  before_action :set_pin, only: :destroy
-  # before_action :set_board, only: [:new, :create]
+  before_action :set_pin, only: [:destroy, :update]
+  # before_action :set_board, only: [:edit]
 
   def new
     @pin = Pin.new
@@ -37,6 +37,14 @@ class PinsController < ApplicationController
     authorize @pin
     @pin.destroy
     redirect_to board_path(@pin.board), status: :see_other
+  end
+
+  def update
+    authorize @pin
+    if @pin.update(pin_params)
+      redirect_to board_path(@pin.board)
+      flash.alert = "Moved pin!"
+    end
   end
 
   private

@@ -22,10 +22,6 @@ class PinPolicy < ApplicationPolicy
     return record.user == user
   end
 
-  def edit?
-    return update?
-  end
-
   def update?
     return record.user == user
   end
