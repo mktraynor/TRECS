@@ -1,23 +1,35 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to recs_path, class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "trecs_logo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <% if current_page?(root_path) %>
+    <% else %>
+      <div>
+        <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
+          <% icon = icon('fa-solid', 'magnifying-glass') %>
+          <% quest = "What do you want to search?" %>
+          <% bar = icon + quest %>
+          <%= text_field_tag :query,
+            params[:query],
+            id: "search-form-nav",
+            placeholder: "What do you want to search?"
+          %>
+        <% end %>
+      </div>
+    <% end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item active" id="recommend">
             <div class="boards-btn">
               <%= link_to "Recommend ", new_rec_path, class: "btn-primary" %>
             </div>
-          </li>
-          <li class="nav-item">
-            <%# link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
