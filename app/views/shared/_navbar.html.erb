@@ -9,7 +9,7 @@
     </button>
     <% if current_page?(root_path) %>
     <% else %>
-      <div>
+      <div id="search-nav">
         <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
           <% icon = icon('fa-solid', 'magnifying-glass') %>
           <% quest = "What do you want to search?" %>
