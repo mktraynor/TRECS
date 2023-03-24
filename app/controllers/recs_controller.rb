@@ -21,7 +21,6 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
-    # @is_pinned = @rec.is_pinned(current_user)
     @markers = [
       {
         lat: @rec.latitude,
@@ -31,7 +30,7 @@ class RecsController < ApplicationController
       }
     ]
     # @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
-
+    # @board = Board.new
   end
 
   def new
@@ -78,7 +77,7 @@ class RecsController < ApplicationController
     @rec = Rec.find(params[:id])
   end
 
-  # def set_board
-  #   @board = Board.find(params[:board_id])
-  # end
+  def set_board
+    @board = Board.find(params[:board_id])
+  end
 end
