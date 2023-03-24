@@ -68,9 +68,6 @@ class RecsController < ApplicationController
     # render "edit" #will go back / stay on the same page
   end
 
-
-
-
   private
 
   def rec_params
