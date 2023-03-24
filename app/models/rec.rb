@@ -9,20 +9,17 @@ class Rec < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_description,
-  against: [ :name, :description ],
-  using: {
-    tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  }
-
+  multisearchable against: [ :name, :description ]
   pg_search_scope :global_search,
   against: [ :name, :description ],
   associated_against: {
-    category: [ :name ]
+    category: [ :name ],
+    user: [:email]
   },
   using: {
     tsearch: { prefix: true }
   }
+
   #multisearchable against: [:title, :description]
 
 end
