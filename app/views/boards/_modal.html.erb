@@ -11,7 +11,7 @@
           <% boards.each do |board| %>
             <%= link_to pin_path(pin, board_id: board.id), class:"list-group-item list-group-item-action", data:{turbo_method: :patch} do %>
               <%= board.name %>
-              <%# aria-current:"true" if @board %>
+              <%# class: "list-group-item-primary" if current_board %>
             <% end %>
           <% end  %>
         </div>
@@ -22,3 +22,7 @@
     </div>
   </div>
 </div>
+
+
+
+<%# current_board = @pin.board %>

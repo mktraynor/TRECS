@@ -18,12 +18,16 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
     @board.user = current_user
     authorize @board
+    # @rec = Rec.find(params[:id])
     if @board.save
-      redirect_to board_path(@board)
+      redirect_to board_path(@board) # change this to an alert
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  # def create_board_pin
+  # end
 
   def new
     @board = Board.new

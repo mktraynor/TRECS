@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :boards
 
+  # post '/recs/:recs_id/pins_board', to: 'boards#create_board_pin', as: 'board-pin'
+
   resources :pins, only: [:edit, :update, :destroy]
 
   resources :categories, only: [:show, :create, :new]
