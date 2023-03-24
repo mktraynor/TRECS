@@ -8,7 +8,11 @@
         <div class="col-sm-6 text-end">
           <h4>@mktraynor<%# @user.username %></h4>
         </div>
+              <% @rec.photos.each do |photo|%>
+      <%= cl_image_tag photo.key%>
+      <% end %>
       </div>
+
 
       <div class="row"> <!-- Category, Rating & Edit/Delete buttons -->
         <div class="col-sm">
