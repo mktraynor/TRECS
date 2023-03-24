@@ -14,8 +14,17 @@ User.destroy_all
 Category.destroy_all
 puts 'Creating 15 fake Recs...'
 
-  category = Category.create!(
+category_restaurant = Category.create!(
     name: "restaurants"
+  )
+  category_museum = Category.create!(
+    name: "museums"
+  )
+  category_accommodation = Category.create!(
+    name: "accommodation"
+  )
+  category_bar = Category.create!(
+    name: "bars"
   )
 
   user = User.create!(
@@ -28,7 +37,7 @@ puts 'Creating 15 fake Recs...'
     address: "13 Rue Chapon, 75003 Paris, France",
     description: "French Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -38,7 +47,7 @@ puts 'Creating 15 fake Recs...'
     address: "Paseo Jorge Parra, 4, Puerta 852, 58133, Albacete, Comunidad de Madrid, Spain",
     description: "Spanish Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -48,7 +57,7 @@ puts 'Creating 15 fake Recs...'
     address: "Ipeirou 68, Athina 104 39, Greece",
     description: "Greek Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -58,7 +67,7 @@ puts 'Creating 15 fake Recs...'
     address: "Incrocio Isotta 91, Piano 6, 63851, Filiberto laziale, Roma, Italy",
     description: "Italian Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -68,7 +77,7 @@ puts 'Creating 15 fake Recs...'
     address: "Köpenicker Str. 11b, Apt. 487, 88939, Süd Santino, Berlin, Germany",
     description: "German Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -78,7 +87,7 @@ puts 'Creating 15 fake Recs...'
     address: "52 Rue Lamartine, 75009 Paris, France",
     description: "French Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -88,7 +97,7 @@ puts 'Creating 15 fake Recs...'
     address: "247 Kennington Ln, London SE11 5QU, United Kingdom",
     description: "London Pub",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -98,7 +107,7 @@ puts 'Creating 15 fake Recs...'
     address: "Via Leonina, 10, 00184 Roma RM, Italy",
     description: "Greek Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -108,7 +117,7 @@ puts 'Creating 15 fake Recs...'
     address: "C. de la Princesa,7, 28008 Madrid, Spain",
     description: "Spanish Bar",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -118,7 +127,7 @@ puts 'Creating 15 fake Recs...'
     address: "Torstraße 125, 10119 Berlin, Germany",
     description: "Kebab Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -128,7 +137,7 @@ puts 'Creating 15 fake Recs...'
     address: "8 Rue de Navarin, 75009 Prais, France",
     description: "French Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -138,7 +147,7 @@ puts 'Creating 15 fake Recs...'
     address: "36 Brewer St., London W1F 9TB, United Kingdom",
     description: "Soho Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -148,7 +157,7 @@ puts 'Creating 15 fake Recs...'
     address: "Piazza Epiro, 6, 00183 Roma RM, Italy",
     description: "Greek Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -158,7 +167,7 @@ puts 'Creating 15 fake Recs...'
     address: "C. del Arenal, 15, 28013 Madrid, España",
     description: "Spanish Tapas",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -168,7 +177,7 @@ puts 'Creating 15 fake Recs...'
     address: "3, Kolokotroni Street, Athens 105 62, Greece",
     description: "Greek Restaurant",
     user_id: user.id,
-    category_id: category.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )

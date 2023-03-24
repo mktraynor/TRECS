@@ -31,15 +31,9 @@ gem "pundit"
 
 # Cloudinary
 gem "cloudinary"
-
-# Gem needed for maps
 gem "geocoder"
-
-# Gem needed for search
 gem "pg_search"
 
-# Gem needed for modals
-gem 'popper_js'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
