@@ -17,7 +17,7 @@
       <div class="row"> <!-- Category, Rating & Edit/Delete buttons -->
         <div class="col-sm">
           <h5><%= @rec.category.name.capitalize %></h5>
-          <h5><%= @rec.rating %></h5>
+          <h5><%= @rec.rating %>/10</h5>
         </div>
         <div class="col-sm text-end">
           <div>
@@ -48,10 +48,10 @@
         <div class="col-sm-9">
           <br>
           <p>
-            <strong>Address:</strong> <%= @rec.address %>
+            <strong><i class="fa-solid fa-house">&nbsp;</i></strong> <%= @rec.address %>
           </p>
           <p>
-            <%= @rec.description %>
+            <i class="fa-solid fa-quote-left">&nbsp;</i><%= @rec.description %>
           </p>
           <p class="card-text">
             <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
@@ -99,4 +99,4 @@
   </div>
 </div>
 
-<%= render "modal", board: @board, pin: @pin%>
+<% render "modal", board: @board, pin: @pin %>
