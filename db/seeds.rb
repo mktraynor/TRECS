@@ -55,7 +55,7 @@ category_restaurant = Category.create!(
     website: "https://www.parcelles-paris.fr/en/",
     rating: 8.9,
     user_id: user.id,
-    category_id: restaurant.id,
+    category_id: category_restaurant.id,
     created_at: Time.now,
     updated_at: Time.now
   )
