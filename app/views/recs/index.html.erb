@@ -6,12 +6,13 @@
         <div class="card">
 
           <div class="card-img-top">
+            <h4> Insert photo here! </h4>
             <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
           </div>
 
-          <div class="body" style="padding: 6px;">
+          <div class="body" style="padding: 8px;">
             <h5 class="card-title"><strong><%= rec.name %></strong></h5>
-            <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6>
+            <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6><br>
             <h6 class="card-subtitle"><%= rec.rating %></h6> <br>
             <p class="card-text"> <%= rec.description %> </p>
             <p class="card-text"> <%= rec.address %> </p> <br>
