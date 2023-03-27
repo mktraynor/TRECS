@@ -93,10 +93,10 @@
                   <li><%= review.comment %></li>
                   <%# regex to strip email to username: ^[^@]+ %>
                   <div>
-                    <% if policy(@rec.reviews).edit? %>
+                    <% if policy(review).edit? %>
                       <%= link_to "Edit", edit_rec_review_path(@rec.id, review), class: "btn-ghost" %>
                     <% end %>
-                    <% if policy(@rec.reviews).destroy? %>
+                    <% if policy(review).destroy? %>
                       <%= link_to "Delete", rec_review_path(@rec.id, review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-ghost" %>
                     <% end %>
                   </div>
