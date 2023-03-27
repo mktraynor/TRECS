@@ -6,7 +6,7 @@
           <h1><strong><%= @rec.name %></strong></h1>
         </div>
         <div class="col-sm-6 text-end">
-          <h4>@mktraynor<%# @user.username %></h4>
+          <h4><%= @rec.user.username %></h4>
         </div>
               <% @rec.photos.each do |photo|%>
       <%= cl_image_tag photo.key%>
@@ -72,29 +72,41 @@
         </div>
       </div>
 
+
+
       <div class="row"> <!-- Reviews -->
         <div class="col-sm">
           <div>
             <br>
-            <h4><strong>Reviews</strong></h4>
+            <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_review_modal">
+              Add a comment
+            </button>
+            <% if @rec.reviews.count > 0 %>
+              <h5><strong><%= @rec.reviews.count %> Comments</strong></h5>
+            <% else %>
+              <h5><strong>No comments yet</strong></h5>
+            <% end %>
           </div>
           <br>
           <ul class="list-group list-group-flush" style="width: 100%;">
-            <li class="list-group-item">
-              <p>
-                <strong>@mktraynor</strong>
-                <br>
-                Loved this place!
-
-              </p>
-            </li>
-            <li class="list-group-item">
-              <p>
-                <strong>@elizaup</strong>
-                <br>
-                Highly recommend!
-              </p>
-            </li>
+            <% @rec.reviews.each do |review| %>
+              <li class="list-group-item">
+                <p>
+                  <strong><%=review.user.username%></strong>
+                  <br>
+                  <li><%= review.comment %></li>
+                  <%# regex to strip email to username: ^[^@]+ %>
+                  <div>
+                    <% if policy(@rec.reviews).edit? %>
+                      <%= link_to "Edit", edit_rec_review_path(@rec.id, review), class: "btn-ghost" %>
+                    <% end %>
+                    <% if policy(@rec.reviews).destroy? %>
+                      <%= link_to "Delete", rec_review_path(@rec.id, review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-ghost" %>
+                    <% end %>
+                  </div>
+                </p>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -104,3 +116,4 @@
 </div>
 
 <%= render "modal", board: @board, pin: @pin %>
+<%= render "newreview", review: @review %>

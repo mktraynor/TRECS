@@ -11,4 +11,8 @@ class User < ApplicationRecord
   # Changelog for board
   # 16/03: changing to singular to debug issue with pins previously plural
   # 20/03: changing back to has_many: boards
+
+  def username
+    email.match(/^[^@]*/)[0]
+  end
 end
