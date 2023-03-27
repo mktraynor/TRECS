@@ -15,7 +15,7 @@
 
 
       <div class="row"> <!-- Category, Rating & Edit/Delete buttons -->
-        <div class="col-sm">
+        <div class="col-sm-12">
           <h5><%= @rec.category.name.capitalize %></h5>
           <h5><%= @rec.rating %>/10</h5>
         </div>
@@ -31,13 +31,15 @@
         </div>
       </div>
 
-      <div class="row justify-content-md-center style= height: 450px;"> <!-- Photos & Map -->
+      <div class="row justify-content-md-center style= height: 400px;"> <!-- Photos & Map -->
+
         <div class="col-sm-7">
           <div class="show-img">
             <%# cl_image_tag @rec.photo.key, height: 100px, width: auto, crop: :fill if @rec.photo.attached? %>
             <%= image_tag "restaurant_example.jpg" %>
           </div>
         </div>
+
         <div class="col-sm-5">
           <div style="width: 100%; height: 100%; border-radius: 6px; border: 1px solid lightgrey; box-shadow: 0 0 4px rgba(0,0,0,0.2);"
             data-controller="map"
@@ -65,52 +67,50 @@
             <br>
           </p>
         </div>
-        <div class="col-sm-3">
-          <p>
-            <!-- REC RATING -->
-          </p>
-        </div>
       </div>
+      <br>
+      <hr>
+      <br>
 
+      <!-- Comments -->
+      <div class="row">
+        <div class="col-sm-12">
+          <% if @rec.reviews.count == 1 %>
+            <h4><strong><%= @rec.reviews.count %> Comment</strong></h4>
+          <% elsif @rec.reviews.count > 0 %>
+            <h4><strong><%= @rec.reviews.count %> Comments</strong></h4>
+          <% else %>
+            <h4><strong>No comments yet! </strong></h4>
+          <% end %>
 
-
-      <div class="row"> <!-- Reviews -->
-        <div class="col-sm">
-          <div>
-            <br>
-            <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_review_modal">
-              Add a comment
-            </button>
-            <% if @rec.reviews.count > 0 %>
-              <h5><strong><%= @rec.reviews.count %> Comments</strong></h5>
-            <% else %>
-              <h5><strong>No comments yet</strong></h5>
-            <% end %>
-          </div>
-          <br>
           <ul class="list-group list-group-flush" style="width: 100%;">
             <% @rec.reviews.each do |review| %>
               <li class="list-group-item">
-                <p>
-                  <strong><%=review.user.username%></strong>
-                  <br>
-                  <li><%= review.comment %></li>
-                  <%# regex to strip email to username: ^[^@]+ %>
-                  <div>
-                    <% if policy(@rec.reviews).edit? %>
-                      <%= link_to "Edit", edit_rec_review_path(@rec.id, review), class: "btn-ghost" %>
-                    <% end %>
-                    <% if policy(@rec.reviews).destroy? %>
-                      <%= link_to "Delete", rec_review_path(@rec.id, review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-ghost" %>
-                    <% end %>
-                  </div>
-                </p>
+                <br>
+                <h6><strong>@<%=review.user.username%></strong></h6>
+                <p><%= review.comment %></p>
+                <%# regex to strip email to username: ^[^@]+ %>
+                <div>
+                  <% if policy(@rec.reviews).edit? %>
+                    <%= link_to "Edit", edit_rec_review_path(@rec.id, review), class: "btn-ghost" %>
+                  <% end %>
+                  <% if policy(@rec.reviews).destroy? %>
+                    <%= link_to "Delete", rec_review_path(@rec.id, review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-ghost" %>
+                  <% end %>
+                </div>
+                <br>
               </li>
             <% end %>
           </ul>
+          <!-- Comment button -->
+          <div style="margin-bottom: 30px;">
+            <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_review_modal">
+              Add a comment
+            </button>
+          </div>
+
         </div>
       </div>
-
     </div>
   </div>
 </div>
