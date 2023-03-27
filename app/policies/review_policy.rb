@@ -23,12 +23,14 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def update?
-    return true
-    # record.first.user == user
+    # return true
+    return record.user == user
+    # record.first.user == user
   end
 
   def destroy?
-    return true
+    # return true
+    return record.user == user
     # record.first.user == user
   end
 
