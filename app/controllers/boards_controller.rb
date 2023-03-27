@@ -3,7 +3,9 @@ class BoardsController < ApplicationController
   before_action :set_rec, only: [:show, :destroy, :edit, :update]
 
   def index
-    @boards = Board.all
+    # @boards = Board.all
+    @user = current_user
+    @boards = Board.where(user: @user)
     @boards = policy_scope(Board)
   end
 
