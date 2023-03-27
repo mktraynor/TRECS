@@ -33,7 +33,13 @@
         <div class="card card-board new-card">
           <div class="card-title">
             <br>
-            <h6><%= link_to "New board", new_board_path, class: "btn-primary btn-new-board" %></h6>
+            <div class="nav-item dropdown">
+            <%= button_tag "New Board", class: "avatar dropdown-toggle btn-primary btn-new-board", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "New board", new_board_path, class: "dropdown-item" %>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
