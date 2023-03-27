@@ -14,7 +14,7 @@
             <h5 class="card-title"><strong><%= rec.name %></strong></h5>
             <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6><br>
             <h6 class="card-subtitle"><%= rec.rating %></h6> <br>
-            <p class="card-text"> <%= rec.description %> </p>
+            <!-- <p class="card-text"> <%= rec.description %> </p> -->
             <p class="card-text"> <%= rec.address %> </p> <br>
             <%= link_to "See More", rec_path(rec), class: "btn-primary" %>
           </div>

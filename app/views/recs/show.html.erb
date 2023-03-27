@@ -45,13 +45,13 @@
       </div>
 
       <div class="row"> <!-- Body: description, functions, etc. -->
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           <br>
           <p>
-            <strong><i class="fa-solid fa-house">&nbsp;</i></strong> <%= @rec.address %>
+            <i class="fa-solid fa-house"></i>&nbsp;&nbsp;<%= @rec.address %>
           </p>
           <p>
-            <i class="fa-solid fa-quote-left">&nbsp;</i><%= @rec.description %>
+            <i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;<%= @rec.description %>&nbsp;&nbsp;<i class="fa-solid fa-quote-right">
           </p>
           <p class="card-text">
             <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
@@ -100,4 +100,3 @@
 </div>
 
 <%= render "modal", board: @board, pin: @pin %>
-
