@@ -31,6 +31,8 @@ class RecsController < ApplicationController
     ]
     # @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
     # @board = Board.new
+    @review = Review.new
+    authorize @review
   end
 
   def new

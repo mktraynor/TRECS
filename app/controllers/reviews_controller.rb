@@ -1,21 +1,23 @@
 class ReviewsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_rec, only: [:new, :edit, :update, :create, :destroy]
+  before_action :set_review, only: [:edit, :update, :destroy]
 
+  # ⬇ added this to recs_controller
   def new
     @review = Review.new
-    @rec = Rec.find(params[:item_id])
     authorize @review
   end
 
   def create
     @review = Review.new(review_params)
+    @review.rec_id = @rec.id
     @review.user = current_user
-    @review.rec = Rec.find(params[:item_id])
     authorize @review
     if @review.save!
-      redirect_to rec_path(@rec), notice: 'review request successful'
+      redirect_to rec_path(@rec), notice: 'Comment posted'
     else
-      redirect_to new_rec_review_path(@rec), status: :unprocessable_entity
+      redirect_to rec_path(@rec), status: :unprocessable_entity
     end
   end
 
@@ -25,6 +27,10 @@ class ReviewsController < ApplicationController
 
   def update
     authorize @review
+    if @review.update(review_params)
+      redirect_to rec_path(@rec)
+      flash.alert = "Edited comment"
+    end
   end
 
   def destroy
@@ -35,8 +41,16 @@ class ReviewsController < ApplicationController
 
   private
 
-  def review
-    params.require(:review).permit(:rating, :comment)
+  def set_rec
+    @rec = Rec.find(params[:rec_id])
+  end
+
+  def review_params
+    params.require(:review).permit(:comment, :rec_id)
+  end
+
+  def set_review
+    @review = Review.find(params[:id])
   end
 
 end
