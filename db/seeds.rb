@@ -44,7 +44,7 @@ category_restaurant = Category.create!(
   )
 
   user = User.create!(
-    email: "something.something@gmail.com",
+    email: "nomadicluna@gmail.com",
     password: "123456"
   )
 

@@ -10,7 +10,10 @@
         <div class="row">
           <%= simple_form_for @review, url: rec_reviews_path(@rec) do |f| %>
             <%= f.input :comment %>
-            <%= f.button :submit, class:"btn-primary" %>
+            <%# f.button :button "Add a comment", class:"btn-primary" %>
+            <%= f.button :button, class:"btn-primary" do %>
+              <%= "Post" %>
+            <% end %>
           <% end %>
         </div>
       </div>
