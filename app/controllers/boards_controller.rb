@@ -12,6 +12,7 @@ class BoardsController < ApplicationController
     authorize @board
     @board.user = current_user
     # show all recs that have pins related to the user and the board
+    # @board = current_board
   end
 
   def create

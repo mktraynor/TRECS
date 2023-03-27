@@ -9,7 +9,7 @@
       <div class="modal-body">
         <div class="list-group">
           <% boards.each do |board| %>
-            <%= link_to pin_path(pin, board_id: board.id), class:"list-group-item list-group-item-action", data:{turbo_method: :patch} do %>
+            <%= link_to pin_path(pin, board_id: board.id), class:"list-group-item list-group-item-action #{"list-group-item-danger" if pin.board == board}", data:{turbo_method: :patch} do %>
               <%= board.name %>
               <%# class: "list-group-item-primary" if current_board %>
             <% end %>
