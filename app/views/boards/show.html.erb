@@ -19,9 +19,10 @@
       </div>
 
       <div class= "row">
-        <div class= "board-cards">
+        <div class= "pin-cards">
           <% @board.pins.each do |pin| %>
-            <div class="card">
+            <% height = rand(200..500) %>
+            <div class="card pin" style="height: <%= height %>px;">
               <div class="card-title">
                 <br>
                 <h5><strong><%= pin.rec.name%></strong></h5>
@@ -29,14 +30,20 @@
               <div class="card-img">
                 <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
               </div>
-              <div class="card-body">
-                <p><%= pin.rec.description%></p>
-                <p><%= pin.rec.address %></p>
-                <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost" %>
-                <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost" %>
-                  <button type="button" class="btn-ghost" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
-                    Move pin
-                  </button>
+              <div class="card-body pin-body">
+                <div id="hide">
+                  <p><%= pin.rec.address %></p>
+                  <div class="nav-item dropdown">
+                    <%= button_tag "Options", class: "avatar dropdown-toggle btn-ghost btn-drop-pin", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost btn-drop-sub" %>
+                      <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost btn-drop-sub" %>
+                      <button type="button" class="btn-ghost btn-drop-sub" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
+                      Move pin
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <%= render "modal", boards: current_user.boards, pin: pin %>
