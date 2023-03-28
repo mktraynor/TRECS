@@ -34,7 +34,7 @@
   <div class="home-recents">
     <h3><strong>Your Destinations</strong></h3>
     <div class="home-boards">
-      <% @user.boards.each_with_index do |board| %>
+      <% @boards.each_with_index do |board| %>
         <% if board.id > 1 && board.id <= 4 %>
           <div class="card home-card border-0">
             <div class="card-img">
