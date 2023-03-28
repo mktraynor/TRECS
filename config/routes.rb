@@ -8,13 +8,15 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :recs do
-    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+    resources :reviews
     resources :pins, only: [:new, :create]
   end
 
   resources :users, only: [:show, :index]
 
   resources :boards
+
+  # post '/recs/:recs_id/pins_board', to: 'boards#create_board_pin', as: 'board-pin'
 
   resources :pins, only: [:edit, :update, :destroy]
 

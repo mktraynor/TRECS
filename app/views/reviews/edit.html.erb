@@ -1,0 +1,20 @@
+<div class= "showcard">
+    <div class= "container-sm">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h1>Edit <%= @review.comment %></h1>
+
+              <%= simple_form_for [@rec, @review]  do |f| %>
+                <%= f.input :comment %>
+                <%= f.button :submit %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

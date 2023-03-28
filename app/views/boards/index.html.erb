@@ -6,7 +6,7 @@
 
   <!-- <div class= "boards-content col-sm-4"> -->
       <div class= "board-cards row row-cols-3">
-        <% @boards.each do |board| %>
+        <% @user.boards.each do |board| %>
           <div class="card card-board border-0">
             <!-- <div class="card-title">
               <br>
@@ -33,45 +33,18 @@
         <div class="card card-board new-card">
           <div class="card-title">
             <br>
-            <h6><%= link_to "New board", new_board_path, class: "btn-primary btn-new-board" %></h6>
+            <div class="nav-item dropdown">
+            <%= button_tag "New Board", class: "avatar dropdown-toggle btn-primary btn-new-board", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "New board", new_board_path, class: "dropdown-item" %>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
   <!-- </div> -->
-</div>
-    <h6><%= link_to "New board", new_board_path, class: "btn-primary" %></h6>
-  </div>
 
-  <div class= "boards-content">
+<!-- </div> -->
 
-    <div class="col-sm-12">
-      <div class= "board-cards">
-        <% @boards.each do |board| %>
-        <div class="card">
-          <div class="card-title">
-            <br>
-            <h5><strong><%= board.name %></strong></h5>
-          </div>
-          <div class="card-img">
-            <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
-          </div>
-          <div class="card-body">
-            <%= link_to "See More", board_path(board), class: "btn-primary" %>
-          </div>
-        </div>
-        <% end %>
-
-        <!-- <div class="card">
-          <div class="card-title">
-            <br>
-            <h6><%= link_to "Create new board", new_board_path, class: "btn-primary" %></h6>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
-
-
-
-  </div>
-
+<%# render "newmodal", board: @board%>

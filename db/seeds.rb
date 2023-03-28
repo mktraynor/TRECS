@@ -14,8 +14,17 @@ User.destroy_all
 Category.destroy_all
 puts 'Creating 15 fake Recs...'
 
-  restaurant = Category.create!(
+category_restaurant = Category.create!(
     name: "restaurants"
+  )
+  category_museum = Category.create!(
+    name: "museums"
+  )
+  category_accommodation = Category.create!(
+    name: "accommodation"
+  )
+  category_bar = Category.create!(
+    name: "bars"
   )
 
   museum = Category.create!(
@@ -35,7 +44,7 @@ puts 'Creating 15 fake Recs...'
   )
 
   user = User.create!(
-    email: "something.something@gmail.com",
+    email: "nomadicluna@gmail.com",
     password: "123456"
   )
 
@@ -46,7 +55,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.parcelles-paris.fr/en/",
     rating: 8.9,
     user_id: user.id,
-    category_id: restaurant.id,
+    category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -58,7 +67,7 @@ puts 'Creating 15 fake Recs...'
     website: "http://aloha.fr/en/home/",
     rating: 7.1,
     user_id: user.id,
-    category_id: accommodation.id,
+    category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -70,7 +79,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.centrepompidou.fr/en/",
     rating: 9.5,
     user_id: user.id,
-    category_id: museum.id,
+    category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -82,7 +91,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.sacre-coeur-montmartre.com/english/",
     rating: 9.7,
     user_id: user.id,
-    category_id: landmark.id,
+    category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -94,7 +103,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.harrysbar.fr/language/en/",
     rating: 8.4,
     user_id: user.id,
-    category_id: bar.id,
+    category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -106,7 +115,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.barrafina.co.uk/restaurants/dean-street/menu",
     rating: 9.8,
     user_id: user.id,
-    category_id: restaurant.id,
+    category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -118,7 +127,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.phoenixhostel.co.uk/",
     rating: 6.2,
     user_id: user.id,
-    category_id: accommodation.id,
+    category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -130,7 +139,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.saatchigallery.com/",
     rating: 8.9,
     user_id: user.id,
-    category_id: museum.id,
+    category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -142,7 +151,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://boroughmarket.org.uk/",
     rating: 9.5,
     user_id: user.id,
-    category_id: landmark.id,
+    category: Category.find_by(name: "landmarks"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -154,7 +163,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://ye-olde-cheshire-cheese.co.uk/",
     rating: 8.5,
     user_id: user.id,
-    category_id: bar.id,
+    category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -166,7 +175,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://letsumai.com/widget/26-vegan-food-project",
     rating: 8.2,
     user_id: user.id,
-    category_id: restaurant.id,
+    category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -178,7 +187,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://hcp.pt/",
     rating: 8.9,
     user_id: user.id,
-    category_id: bar.id,
+    category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -190,7 +199,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://www.gatewayhostel.com/",
     rating: 7.6,
     user_id: user.id,
-    category_id: accommodation.id,
+    category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -202,7 +211,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://gulbenkian.pt/museu/en/",
     rating: 9.2,
     user_id: user.id,
-    category_id: museum.id,
+    category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -214,7 +223,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://en.wikipedia.org/wiki/Padr%C3%A3o_dos_Descobrimentos",
     rating: 8.9,
     user_id: user.id,
-    category_id: landmark.id,
+    category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
   )
@@ -226,7 +235,7 @@ puts 'Creating 15 fake Recs...'
     website: "https://eastseven.de/en/",
     rating: 8.4,
     user_id: user.id,
-    category_id: accommodation.id,
+    category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
   )

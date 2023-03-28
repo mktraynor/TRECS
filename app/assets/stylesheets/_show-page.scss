@@ -1,12 +1,11 @@
-.show-container {
+.show-content {
   display: flex;
   justify-content: space-around;
 }
-
 .showcard {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
+  width: 90%;
   border: 1px solid lightgrey;
   p {
     font-size: 20px;
@@ -16,10 +15,13 @@
   padding-top: 15px !important;
 }
 
-.showpage-map {
+.show-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
   border: 10px;
+  border-right: 14px;
   border-radius: 6px;
   border: 1px solid lightgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  display: flex;
 }

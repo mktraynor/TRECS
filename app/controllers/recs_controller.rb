@@ -5,12 +5,12 @@ class RecsController < ApplicationController
 
   def index
     @recs = if params[:query].present?
-              policy_scope(Rec).search_by_name_and_description(params[:query])
+              policy_scope(Rec).global_search(params[:query])
             else
               policy_scope(Rec)
             end
     @markers = @recs.geocoded.map do |rec|
-      {
+     {
         lat: rec.latitude,
         lng: rec.longitude,
         info_window: render_to_string(partial: "popup", locals: {rec: rec})
@@ -21,7 +21,6 @@ class RecsController < ApplicationController
 
   def show
     authorize @rec
-    # @is_pinned = @rec.is_pinned(current_user)
     @markers = [
       {
         lat: @rec.latitude,
@@ -31,7 +30,9 @@ class RecsController < ApplicationController
       }
     ]
     # @city = Geocoder.search([@rec.latitude, @rec.longitude]).first.city
-
+    # @board = Board.new
+    @review = Review.new
+    authorize @review
   end
 
   def new
@@ -42,12 +43,12 @@ class RecsController < ApplicationController
   def create
     @rec = Rec.new(rec_params)
     @rec.user = current_user
-    authorize @rec
     if @rec.save
       redirect_to rec_path(@rec)
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @rec
   end
 
   def destroy
@@ -78,7 +79,7 @@ class RecsController < ApplicationController
     @rec = Rec.find(params[:id])
   end
 
-  # def set_board
-  #   @board = Board.find(params[:board_id])
-  # end
+  def set_board
+    @board = Board.find(params[:board_id])
+  end
 end

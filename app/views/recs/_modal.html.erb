@@ -8,9 +8,11 @@
       </div>
       <div class="modal-body">
         <div class="list-group">
-          <% current_user.boards.each do |board|  %>
-            <%= link_to rec_pins_path(@rec, board_id: board.id), class:"list-group-item list-group-item-action", data: {turbo_method: :post} do %>
+          <% if current_user %>
+            <% current_user.boards.each do |board| %>
+              <%= link_to rec_pins_path(@rec, board_id: board.id), class:"list-group-item list-group-item-action", data: {turbo_method: :post} do %>
               <%= board.name %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -22,8 +24,9 @@
   </div>
 </div>
 
+<%# render "newmodal", board: @board %>
 
 
-<%# link_to "Save", rec_pins_path(@rec), data:{turbo_method: :post}, params: { pin: { rec_id: @rec}}, class: "btn-primary" %>
-<%# link_to board.name, class="list-group-item list-group-item-action", rec_pins_path(@rec), data:{turbo_method: :post}, params: { pin: { rec_id: @rec}}, class: "btn-primary" %>
-<%# board.name %>
+<%# button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_board_modal">
+Create a new board
+</button> %>

@@ -30,6 +30,8 @@
 
 .d-flex {
   padding: 6px 10px 6px 20px;
+#search-form-nav {
+  padding: 8px 10px 8px 20px;
   border-radius: 50px;
   background-color: $light-gray;
   border: 0.1px solid $blue;
@@ -56,6 +58,10 @@
 
 #search-nav {
   min-width: 430px;
+}
+
+#search-nav {
+  min-width: 410px;
   width: 50%;
 }
 

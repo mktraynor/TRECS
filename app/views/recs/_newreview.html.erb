@@ -1,0 +1,25 @@
+<div class="modal fade" id="new_review_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Write a comment...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <%= simple_form_for @review, url: rec_reviews_path(@rec) do |f| %>
+            <%= f.input :comment %>
+            <%# f.button :button "Add a comment", class:"btn-primary" %>
+            <%= f.button :button, class:"btn-primary" do %>
+              <%= "Post" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

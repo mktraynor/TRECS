@@ -3,7 +3,9 @@ class BoardsController < ApplicationController
   before_action :set_rec, only: [:show, :destroy, :edit, :update]
 
   def index
-    @boards = Board.all
+    # @boards = Board.all
+    @user = current_user
+    @boards = Board.where(user: @user)
     @boards = policy_scope(Board)
   end
 
@@ -12,18 +14,23 @@ class BoardsController < ApplicationController
     authorize @board
     @board.user = current_user
     # show all recs that have pins related to the user and the board
+    # @board = current_board
   end
 
   def create
     @board = Board.new(board_params)
     @board.user = current_user
     authorize @board
+    # @rec = Rec.find(params[:id])
     if @board.save
-      redirect_to board_path(@board)
+      redirect_to board_path(@board) # change this to an alert
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  # def create_board_pin
+  # end
 
   def new
     @board = Board.new
