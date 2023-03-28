@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @boards = Board.all
+    @user = current_user
   end
 end

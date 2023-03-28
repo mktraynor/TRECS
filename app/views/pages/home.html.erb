@@ -24,11 +24,38 @@
     </div>
   </div>
   <div class="home-recents">
-    <h3><strong>Top destinations</strong></h3>
+    <h3><strong>Your Destinations</strong></h3>
+    <div class="home-boards">
+      <% @user.boards.each_with_index do |board| %>
+        <% if board.id > 1 && board.id <= 4 %>
+          <div class="card home-card border-0">
+            <div class="card-img">
+              <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+              <div class="imgs">
+                <div class="img big-img">
+                </div>
+              </div>
+              <div class="imgs small-imgs">
+                <div class="img small-img">
+                </div>
+                <div class="img small-img">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- <h3><strong>Top destinations</strong></h3>
     <% @boards.each do |board| %>
       <% unless board.name == "All Pins" %>
         <%= board.name %>
       <% end %>
-    <% end %>
+    <% end %> -->
   </div>
+
 </div>
