@@ -88,4 +88,20 @@
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  h3 {
+    margin-bottom: 25px;
+  }
+}
+
+.home-boards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-card {
+  width: 225px;
+  height: 200px;
+  padding: 15px;
 }
