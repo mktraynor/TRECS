@@ -1,21 +1,23 @@
-<div class= "showcard">
+<div class="show-content">
+  <div class="showcard">
     <div class= "container-sm">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card" style="width: 100%">
-            <div class="card-body">
-              <h1>Edit <%= @rec.name %></h1>
-
-              <%= simple_form_for @rec do |f| %>
-                <%= f.input :name %>
-                <%# f.input :category drop down list %>
-                <%= f.input :address %>
-                <%= f.input :description %>
-                <%= f.button :submit %>
-              <% end %>
-
-            </div>
-          </div>
+      <br>
+      <div class="row" style="text-align: center;">
+        <h1><strong>Edit <%= @rec.name %></strong></h1>
+      </div>
+      <div class= "newcard" style="width: 100%;">
+        <div>
+          <%= simple_form_for @rec do |f| %>
+              <%= f.input :name %>
+              <%# f.input :category drop down list %>
+              <%= f.input :address %>
+              <%= f.input :description %>
+              <div class="row g-3">
+                <%= f.button :submit, class:"btn-primary"%>
+              </div>
+            </form>
+          <% end %>
+          <br>
         </div>
       </div>
     </div>
