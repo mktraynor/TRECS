@@ -1,4 +1,12 @@
 
+h1 {
+  color: $gray;
+}
+
+.background {
+  background-color: $light-gray;
+}
+
 .pin {
   padding: 10px;
   padding-bottom: 20px;
@@ -9,13 +17,18 @@
 
 .btn-drop-pin {
   width: 150px;
+  background-color: $light-gray;
+  border-color: $blue;
 }
 
 .btn-drop-sub {
+  width: 30%;
   height: 40px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 15px;
+  background-color: $light-gray;
+  border-color: $blue;
 }
 
 .dropdown {
