@@ -17,6 +17,7 @@ class RecsController < ApplicationController
         # image_url: helpers.asset_url("replace_with_image")
       }
     end
+    @recs = Rec.where(category_id: params[:category_id]) if params[:category_id].present?
   end
 
   def show
