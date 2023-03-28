@@ -24,6 +24,11 @@
     </div>
   </div>
   <div class="home-recents">
-    <p>Recent Recs listed</p>
+    <h3><strong>Top destinations</strong></h3>
+    <% @boards.each do |board| %>
+      <% unless board.name == "All Pins" %>
+        <%= board.name %>
+      <% end %>
+    <% end %>
   </div>
 </div>
