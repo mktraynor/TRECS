@@ -48,7 +48,7 @@ category_restaurant = Category.create!(
     password: "123456"
   )
 
-  Rec.create!(
+  rec1 = Rec.create!(
     name: "Parcelles",
     address: "13 Rue Chapon, 75003, Paris, France",
     description: "Set in a picturesque side street, this 1936 bistro has authentic furniture, vintage tiled flooring, and a gilded ceiling. The food is equally genuine: country pâté, creamy polenta, or dark chocolate tart. This is a restaurant that fully deserves its success.",
@@ -59,8 +59,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec1.photos.attach( io: File.open(Rails.root.join("app/assets/images/restaurant_example.jpg")), filename: 'rec1' )
+  rec1.save
 
-  Rec.create!(
+  rec2 = Rec.create!(
     name: "Aloha Hostel",
     address: "1 Rue Borromée, 75015 Paris, France",
     description: "Centrally located and affordable, the hostel is within easy walking distance of Paris' most famous sites. With Volontaires Metro station only 5 minutes away, the rest of Paris is easy to explore. A clean and homely hostel with private rooms also available.",
@@ -71,6 +73,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec2.photos.attach( io: File.open(Rails.root.join("app/assets/images/aloha_hostel.jpeg")), filename: 'rec2' )
+  rec2.save
 
   Rec.create!(
     name: "Centre Pompidou",
@@ -96,7 +100,7 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  Rec.create!(
+  rec3 = Rec.create!(
     name: "Harry's Bar",
     address: "5 Rue Daunou, 75002 Paris, France",
     description: "In 1911, a jockey dismantled a New York bar and re-installed it on Rue Daunou in Paris. Classic, bespoke & Cuban-style cocktails in a chic, wood-lined space with a piano bar in the cellar. Thursday and Friday are jazz nights at Harry's.",
@@ -107,8 +111,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/th.jpeg")), filename: 'rec3' )
+  rec3.save
 
-  Rec.create!(
+  rec4 = Rec.create!(
     name: "Barrafina",
     address: "26-27 Dean St, London, United Kingdom W1D 3LL",
     description: "The informal, Michelin-starred restaurant has an open kitchen, a marble-topped bar and leather stools where guests sit and watch the chefs at work. The a-la-carte menu offers regional Spanish dishes, while daily-changing specials showcase the best seafood and seasonal ingredients.",
@@ -120,7 +126,11 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  Rec.create!(
+  rec4.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (1).jpeg")), filename: 'rec4' )
+  rec4.save
+
+
+  rec5 =Rec.create!(
     name: "Phoenix Hostel & Bar",
     address: "6 Daventry St, London NW1 5NU",
     description: "Housed in a homely English-style pub, the Phoenix is perfectly located with all main attractions and tube stations being only 100+ yards away. Great for those on a tight budget looking for somewhere to lay their head after a few pints.",
@@ -131,6 +141,9 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+
+  rec5.photos.attach( io: File.open(Rails.root.join("app/assets/images/2466164.jpeg.crdownload")), filename: 'rec5' )
+  rec5.save
 
   Rec.create!(
     name: "Saatchi Gallery",
@@ -144,7 +157,7 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  Rec.create!(
+  rec6 = Rec.create!(
     name: "Borough Market",
     address: "8 Southwark St, London SE1 1TL",
     description: "Borough Market is a wholesale and retail food market hall in Southwark. It is one of the largest and oldest food markets in London, with a market on the site dating back to at least the 12th century.",
@@ -155,6 +168,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec6.photos.attach( io: File.open(Rails.root.join("db/migrate/th (2).jpeg")), filename: 'rec6' )
+  rec6.save
 
   Rec.create!(
     name: "Ye Olde Cheshire Cheese",
