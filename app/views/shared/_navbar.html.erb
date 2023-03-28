@@ -11,7 +11,7 @@
     <% else %>
       <div id="search-nav">
         <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
-          <% icon = icon('fa-solid', 'magnifying-glass') %>
+          <%= icon = icon('fa-solid', 'magnifying-glass') %>
           <% quest = "What do you want to search?" %>
           <% bar = icon + quest %>
           <%= text_field_tag :query,
