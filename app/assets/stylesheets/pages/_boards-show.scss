@@ -1,0 +1,86 @@
+
+.pin {
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 12px;
+  display: inline-block;
+  width: 280px;
+}
+
+.btn-drop-pin {
+  width: 150px;
+}
+
+.btn-drop-sub {
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 15px;
+}
+
+.dropdown {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pin-body {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+
+  p {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+.pin-cards {
+  columns: 4;
+}
+
+#hide {
+  position: absolute;
+  bottom: 0;
+}
+
+.pin:hover .card-body {
+  visibility: visible;
+  transition: visibility 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .pin-cards {
+    columns: 1;
+  }
+
+  .pin {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) {
+  .pin-cards {
+    columns: 2;
+  }
+
+  .pin {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pin-cards {
+    columns: 3;
+  }
+
+  .pin {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .pin-cards {
+    columns: 4;
+  }
+}
