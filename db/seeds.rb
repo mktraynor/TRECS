@@ -9,6 +9,7 @@
 puts 'Cleaning Recs'
 Pin.destroy_all
 Board.destroy_all
+Review.destroy_all
 Rec.destroy_all
 User.destroy_all
 Category.destroy_all
