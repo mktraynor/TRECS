@@ -77,7 +77,7 @@ category_restaurant = Category.create!(
   rec2.photos.attach( io: File.open(Rails.root.join("app/assets/images/aloha_hostel.jpeg")), filename: 'rec2' )
   rec2.save
 
-  Rec.create!(
+  rec7 = Rec.create!(
     name: "Centre Pompidou",
     address: "Place Georges-Pompidou, 75004 Paris, France",
     description: "Home to Europe's largest collection of modern and contemporary art. Amazing not just for its outstanding art, but also for its radical architecture. Don't miss the spectacular view from the rooftop.",
@@ -88,8 +88,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec7.photos.attach( io: File.open(Rails.root.join("app/assets/images/180625153140-centre-pompidou-super-tease.jpeg")), filename: 'rec7' )
+  rec7.save
 
-  Rec.create!(
+  rec8 = Rec.create!(
     name: "Sacré-Cœur Basilica",
     address: "35 Rue du Chevalier de la Barre, 75018 Paris, France",
     description: "The 2nd-highest structure in Paris. The all-white structure sits on top of Montmartre, so you can easily see it from many places in the city. The Roman-Byzantine architecture is unusual for Paris, with its dome beautifully contrasting with the rest of the city.",
@@ -100,6 +102,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec8.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec8' )
+  rec8.save
 
   rec3 = Rec.create!(
     name: "Harry's Bar",
@@ -146,7 +150,7 @@ category_restaurant = Category.create!(
   rec5.photos.attach( io: File.open(Rails.root.join("app/assets/images/2466164.jpeg.crdownload")), filename: 'rec5' )
   rec5.save
 
-  Rec.create!(
+  rec9 = Rec.create!(
     name: "Saatchi Gallery",
     address: "Duke of York's HQ, King's Rd, London SW3 4RY",
     description: "The Saatchi Gallery showcases contemporary works of art focusing on young artists and international artists who have rarely been seen in the UK. Committed to inspire a passion for contemporary art in all audiences.",
@@ -157,6 +161,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec9' )
+  rec9.save
 
   rec6 = Rec.create!(
     name: "Borough Market",
@@ -172,7 +178,7 @@ category_restaurant = Category.create!(
   rec6.photos.attach( io: File.open(Rails.root.join("db/migrate/th (2).jpeg")), filename: 'rec6' )
   rec6.save
 
-  Rec.create!(
+  rec10 = Rec.create!(
     name: "Ye Olde Cheshire Cheese",
     address: "145 Fleet St, London EC4A 2BP",
     description: "Historic gathering place doling out carefully sourced pub grub, wine & draught beer.",
@@ -183,8 +189,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec10.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (4).jpeg")), filename: 'rec10' )
+  rec10.save
 
-  Rec.create!(
+  rec11 = Rec.create!(
     name: "Ao 26",
     address: "R. Horta Seca 5, 1200-213 Lisboa, Portugal",
     description: "Ao26 is one of the best vegan restaurants in Lisbon. It is a great place to go with non-vegan/vegetarian friends.",
@@ -195,8 +203,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec11.photos.attach( io: File.open(Rails.root.join("app/assets/images/ao-26-vegan-food-project-sala-55f97.jpeg")), filename: 'rec11' )
+  rec11.save
 
-  Rec.create!(
+  rec12 = Rec.create!(
     name: "Hot Clube de Portugal",
     address: "Praça da Alegria 48, 1250-004 Lisboa, Portugal",
     description: "Famous, historic jazz club with local performers & big name guests in an intimate cellar setting.",
@@ -207,8 +217,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec12.photos.attach( io: File.open(Rails.root.join("app/assets/images/Hot-Clube-de-Portugal-2.jpeg")), filename: 'rec12' )
+  rec12.save
 
-  Rec.create!(
+  rec13 = Rec.create!(
     name: "The Gateway Eco Hostel",
     address: "Tv. do Fala-Só 24, 1250-096 Lisboa, Portugal",
     description: "Previously GSpot Party Hostel, this hostel has rebranded yet still maintains their communal and upbeat vibe.",
@@ -219,8 +231,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (5).jpeg")), filename: 'rec13' )
+  rec13.save
 
-  Rec.create!(
+  rec14 = Rec.create!(
     name: "Calouste Gulbenkian Museum",
     address: "Av. de Berna 45A, 1067-001 Lisboa, Portugal",
     description: "The Calouste Gulbenkian Museum houses one of the world's most important private art collections. It includes works from Ancient Egypt to the early 20th century, spanning the arts of the Islamic World, China and Japan, as well as the French decorative arts and more.",
@@ -231,8 +245,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (5).jpeg")), filename: 'rec14' )
+  rec14.save
 
-  Rec.create!(
+  rec16 = Rec.create!(
     name: "Padrão dos Descobrimentos",
     address: "Av. Brasília, 1400-038 Lisboa, Portugal",
     description: "A monument on the northern bank of the Tagus river estuary, in the civil parish of Santa Maria de Belém.",
@@ -243,8 +259,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec16.photos.attach( io: File.open(Rails.root.join("db/migrate/LikedPlaces_Portugal_Melhor_Destino_Mundo-scaled.jpeg")), filename: 'rec16' )
+  rec16.save
 
-  Rec.create!(
+  rec15 = Rec.create!(
     name: "EastSeven Hostel",
     address: "Schwedter Str. 7, 10119 Berlin, Germany",
     description: "This funky hostel has become one of the most popular budget spots in the city. Combining an intimate atmosphere with clean, smart rooms and decent facilities, it’s a laid-back, friendly and very well-run place.",
@@ -255,5 +273,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/Screenshot 2023-03-28 at 20.19.23.png")), filename: 'rec14' )
+  rec14.save
 
 puts 'Finished!'
