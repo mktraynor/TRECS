@@ -5,8 +5,8 @@
       <% @recs.each do |rec| %>
         <div class="card">
           <% unless rec.photos.first.nil? %>
-              <div class="card-img">
-                <%= cl_image_tag rec.photos.first.key %>
+              <div class="index-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path rec.photos.first.key %>')">
+                <%# cl_image_tag rec.photos.first.key %>
               </div>
           <% end %>
           <div class="body" style="padding: 8px;">
