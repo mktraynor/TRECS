@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  border-radius: 8px;
   border: 1px solid lightgrey;
   p {
     font-size: 20px;
@@ -13,6 +14,7 @@
   color: black;
   background-color: white;
   padding-top: 15px !important;
+  margin: 16px;
 }
 
 .show-img {
@@ -24,6 +26,12 @@
   border-radius: 6px;
   border: 1px solid lightgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.show-img:hover {
+  transform: scale(1.02);
+  border: 2px solid #FF5572;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 .gx-3 {
