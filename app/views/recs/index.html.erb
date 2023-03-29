@@ -6,16 +6,17 @@
         <div class="card">
           <% unless rec.photos.first.nil? %>
               <div class="index-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path rec.photos.first.key %>')">
-                <%# cl_image_tag rec.photos.first.key %>
               </div>
           <% end %>
-          <div class="body" style="padding: 8px;">
+          <div class="body" style="padding: 14px; text-align: left;">
             <h5 class="card-title"><strong><%= rec.name %></strong></h5>
             <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6><br>
-            <h6 class="card-subtitle"><%= rec.rating %></h6> <br>
-            <!-- <p class="card-text"> <%= rec.description %> </p> -->
-            <p class="card-text"> <%= rec.address %> </p> <br>
-            <%= link_to "See More", rec_path(rec), class: "btn-primary" %>
+            <h6 class="card-subtitle"><i class="fa-solid fa-star"></i> <%= rec.rating %>/10</h6><br>
+            <p class="card-text"><%= rec.description %></p>
+            <p class="card-text"><i class="fa-solid fa-house"></i> &nbsp;<%= rec.address %></p> <br>
+          </div>
+          <div style="padding: 8px; text-align: center;">
+            <%= link_to "See More", rec_path(rec), class: "btn-primary", style: "width: 80% !important;" %>
           </div>
         </div>
       <% end %>
