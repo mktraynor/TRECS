@@ -1,6 +1,11 @@
 <div class= "index-content">
 
   <div class="col-sm-8">
+    <div class="row">
+      <div class="container">
+      </div>
+    </div>
+
     <div class= "cards">
       <% @recs.each do |rec| %>
         <div class="card">
@@ -12,8 +17,7 @@
             <h5 class="card-title"><strong><%= rec.name %></strong></h5>
             <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6><br>
             <h6 class="card-subtitle"><i class="fa-solid fa-star"></i> <%= rec.rating %>/10</h6><br>
-            <p class="card-text"><%= rec.description %></p>
-            <p class="card-text"><i class="fa-solid fa-house"></i> &nbsp;<%= rec.address %></p> <br>
+            <h6 class="card-text"><i class="fa-solid fa-house"></i> &nbsp;<%= rec.address %></h6> <br>
           </div>
           <div style="padding: 8px; text-align: center;">
             <%= link_to "See More", rec_path(rec), class: "btn-primary", style: "width: 80% !important;" %>

@@ -5,7 +5,8 @@
         <p><i class="fas fa-search"></i>    Where do you want to go?</p>
       </div> -->
       <div class="home-title">
-        <h1 style="color: white !important;"><strong>TRECS: Travel recommendations from your trusted social circle.</strong></h1>
+        <h1 style="color: white !important;"><strong>TRECS: Travel recommendations from a trusted social circle.</strong></h1>
+        <h5>Explore authentic travel recommendations <br> suggested by like-minded travellers. </h5>
       </div>
 
       <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
@@ -13,7 +14,7 @@
           params[:query],
           class: "form-control",
           id: "search-form-homepage",
-          placeholder: "What do you want to search?"
+          placeholder: "Where would you like to go?"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
@@ -32,6 +33,7 @@
           <i class="fas fa-cocktail cat_one"></i>
         <% end %>
       </div>
+
     </div>
   </div>
 
