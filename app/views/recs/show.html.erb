@@ -45,14 +45,14 @@
         <div class="row info"> <!-- Body: description, functions, etc. -->
           <div class="col-sm-12">
             <p>
-              <i class="fa-regular fa-map"></i> &nbsp; <%= @rec.address %>
+              <i class="fa-regular fa-map"></i> &nbsp;<%= @rec.address %>
             </p>
             <p>
-              <i class="fa-regular fa-pen-to-square"></i> &nbsp; <%= @rec.description %>
+              <i class="fa-regular fa-pen-to-square"></i> &nbsp;<%= @rec.description %>
             </p>
             <p class="card-text">
               <button type="button" class="btn-primary save-rec" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
-                Save rec
+                Save Rec
               </button>
               <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
               <br>
@@ -94,7 +94,7 @@
           <!-- Comment button -->
           <div style="margin-bottom: 30px;">
             <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_review_modal">
-              Add a comment
+              Add a Comment
             </button>
           </div>
         </div>
