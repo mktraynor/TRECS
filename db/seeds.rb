@@ -13,7 +13,7 @@ Review.destroy_all
 Rec.destroy_all
 User.destroy_all
 Category.destroy_all
-puts 'Creating 15 fake Recs...'
+puts 'Creating fake Recs...'
 
 category_restaurant = Category.create!(
     name: "restaurants"
@@ -28,19 +28,7 @@ category_restaurant = Category.create!(
     name: "bars"
   )
 
-  museum = Category.create!(
-    name: "museums"
-  )
-
-  accommodation = Category.create!(
-    name: "accommodation"
-  )
-
-  bar = Category.create!(
-    name: "bars"
-  )
-
-  landmark = Category.create!(
+  categlandmark = Category.create!(
     name: "landmarks"
   )
 
@@ -116,7 +104,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/th.jpeg")), filename: 'rec3' )
+  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/harrys.jpg")), filename: 'rec3' )
   rec3.save
 
   rec4 = Rec.create!(
@@ -231,7 +219,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (5).jpeg")), filename: 'rec13' )
+  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/gspot.png")), filename: 'rec13' )
   rec13.save
 
   rec14 = Rec.create!(
@@ -245,7 +233,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (5).jpeg")), filename: 'rec14' )
+  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/gulbenkian.png")), filename: 'rec14' )
   rec14.save
 
   rec16 = Rec.create!(
@@ -273,7 +261,64 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/Screenshot 2023-03-28 at 20.19.23.png")), filename: 'rec14' )
-  rec14.save
+  rec15.photos.attach( io: File.open(Rails.root.join("app/assets/images/Screenshot 2023-03-28 at 20.19.23.png")), filename: 'rec15' )
+  rec15.save
+
+
+  rec17 = Rec.create!(
+    name: "Brigade du Tigre",
+    address: "38 Rue du Faubourg Poissonnière, 75010 Paris, France",
+    description: "Asian cuisine in a bistro-style duplex. Serves small, fragrant nuggets to nibble on your own or to share, concocted from quality products.",
+    website: "https://www.brigadedutigre.fr/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "restaurants"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec17.photos.attach( io: File.open(Rails.root.join("app/assets/images/tigre.png")), filename: 'rec17' )
+  rec17.save!
+
+  rec18 = Rec.create!(
+    name: "Hotel Parma",
+    address: "Salamanca Pasealekua, 10, 20003 Donostia, Gipuzkoa, Spain",
+    description: "This relaxed hotel in the Old Town has ocean-front views and is only a 10-minute walk from Playa de Zurriola.",
+    website: "https://hotelparma.com/en/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "accommodation"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec18.photos.attach( io: File.open(Rails.root.join("app/assets/images/parma.png")), filename: 'rec18' )
+  rec18.save!
+
+  rec19 = Rec.create!(
+    name: "Bar Sport",
+    address: "Fermin Calbeton Kalea, 10, 20003 Donostia, Gipuzkoa, Spain",
+    description: "Bar Sport is renowned for a pretty varied selection of good-quality pintxos and a great night out.",
+    website: "https://www.facebook.com/BarSportDonostia/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "bars"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec19.photos.attach( io: File.open(Rails.root.join("app/assets/images/barsport.png")), filename: 'rec19' )
+  rec19.save!
+
+  rec20 = Rec.create!(
+    name: "Palacio Miramar",
+    address: "Paseo Miraconcha, 48, 20007 Donostia, Gipuzkoa, Spain",
+    description: "The Miramar Palace is a late 19th-century palace located on La Concha bay. It was built in 1893 commissioned by the Spanish royal family.",
+    website: "https://www.miramar.eus/en/",
+    rating: 10,
+    user_id: user.id,
+    category: Category.find_by(name: "landmarks"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec20.photos.attach( io: File.open(Rails.root.join("app/assets/images/palaciomiramar.png")), filename: 'rec20' )
+  rec20.save!
 
 puts 'Finished!'
