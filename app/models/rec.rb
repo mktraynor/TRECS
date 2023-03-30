@@ -1,8 +1,8 @@
 class Rec < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :reviews
-  has_many :pins
+  has_many :reviews, dependent: :destroy
+  has_many :pins, dependent: :destroy
   has_many_attached :photos
 
   geocoded_by :address

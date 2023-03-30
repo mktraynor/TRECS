@@ -1,12 +1,13 @@
 class BoardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_rec, only: [:show, :destroy, :edit, :update]
+  before_action :set_board, only: [:show, :destroy, :edit, :update]
 
   def index
     # @boards = Board.all
     @user = current_user
     @boards = Board.where(user: @user)
     @boards = policy_scope(Board)
+    @board = Board.new
   end
 
   def show
@@ -59,7 +60,7 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name)
   end
 
-  def set_rec
+  def set_board
     @board = Board.find(params[:id])
   end
 end
