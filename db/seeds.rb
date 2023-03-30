@@ -9,10 +9,11 @@
 puts 'Cleaning Recs'
 Pin.destroy_all
 Board.destroy_all
+Review.destroy_all
 Rec.destroy_all
 User.destroy_all
 Category.destroy_all
-puts 'Creating 15 fake Recs...'
+puts 'Creating fake Recs...'
 
 category_restaurant = Category.create!(
     name: "restaurants"
@@ -27,19 +28,7 @@ category_restaurant = Category.create!(
     name: "bars"
   )
 
-  museum = Category.create!(
-    name: "museums"
-  )
-
-  accommodation = Category.create!(
-    name: "accommodation"
-  )
-
-  bar = Category.create!(
-    name: "bars"
-  )
-
-  landmark = Category.create!(
+  categlandmark = Category.create!(
     name: "landmarks"
   )
 
@@ -76,7 +65,7 @@ category_restaurant = Category.create!(
   rec2.photos.attach( io: File.open(Rails.root.join("app/assets/images/aloha_hostel.jpeg")), filename: 'rec2' )
   rec2.save
 
-  Rec.create!(
+  rec7 = Rec.create!(
     name: "Centre Pompidou",
     address: "Place Georges-Pompidou, 75004 Paris, France",
     description: "Home to Europe's largest collection of modern and contemporary art. Amazing not just for its outstanding art, but also for its radical architecture. Don't miss the spectacular view from the rooftop.",
@@ -87,8 +76,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec7.photos.attach( io: File.open(Rails.root.join("app/assets/images/180625153140-centre-pompidou-super-tease.jpeg")), filename: 'rec7' )
+  rec7.save
 
-  Rec.create!(
+  rec8 = Rec.create!(
     name: "Sacré-Cœur Basilica",
     address: "35 Rue du Chevalier de la Barre, 75018 Paris, France",
     description: "The 2nd-highest structure in Paris. The all-white structure sits on top of Montmartre, so you can easily see it from many places in the city. The Roman-Byzantine architecture is unusual for Paris, with its dome beautifully contrasting with the rest of the city.",
@@ -99,6 +90,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec8.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec8' )
+  rec8.save
 
   rec3 = Rec.create!(
     name: "Harry's Bar",
@@ -111,7 +104,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/th.jpeg")), filename: 'rec3' )
+  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/harrys.jpg")), filename: 'rec3' )
   rec3.save
 
   rec4 = Rec.create!(
@@ -145,7 +138,7 @@ category_restaurant = Category.create!(
   rec5.photos.attach( io: File.open(Rails.root.join("app/assets/images/2466164.jpeg.crdownload")), filename: 'rec5' )
   rec5.save
 
-  Rec.create!(
+  rec9 = Rec.create!(
     name: "Saatchi Gallery",
     address: "Duke of York's HQ, King's Rd, London SW3 4RY",
     description: "The Saatchi Gallery showcases contemporary works of art focusing on young artists and international artists who have rarely been seen in the UK. Committed to inspire a passion for contemporary art in all audiences.",
@@ -156,6 +149,8 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec9' )
+  rec9.save
 
   rec6 = Rec.create!(
     name: "Borough Market",
@@ -171,7 +166,7 @@ category_restaurant = Category.create!(
   rec6.photos.attach( io: File.open(Rails.root.join("db/migrate/th (2).jpeg")), filename: 'rec6' )
   rec6.save
 
-  Rec.create!(
+  rec10 = Rec.create!(
     name: "Ye Olde Cheshire Cheese",
     address: "145 Fleet St, London EC4A 2BP",
     description: "Historic gathering place doling out carefully sourced pub grub, wine & draught beer.",
@@ -182,8 +177,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec10.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (4).jpeg")), filename: 'rec10' )
+  rec10.save
 
-  Rec.create!(
+  rec11 = Rec.create!(
     name: "Ao 26",
     address: "R. Horta Seca 5, 1200-213 Lisboa, Portugal",
     description: "Ao26 is one of the best vegan restaurants in Lisbon. It is a great place to go with non-vegan/vegetarian friends.",
@@ -194,8 +191,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec11.photos.attach( io: File.open(Rails.root.join("app/assets/images/ao-26-vegan-food-project-sala-55f97.jpeg")), filename: 'rec11' )
+  rec11.save
 
-  Rec.create!(
+  rec12 = Rec.create!(
     name: "Hot Clube de Portugal",
     address: "Praça da Alegria 48, 1250-004 Lisboa, Portugal",
     description: "Famous, historic jazz club with local performers & big name guests in an intimate cellar setting.",
@@ -206,8 +205,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec12.photos.attach( io: File.open(Rails.root.join("app/assets/images/Hot-Clube-de-Portugal-2.jpeg")), filename: 'rec12' )
+  rec12.save
 
-  Rec.create!(
+  rec13 = Rec.create!(
     name: "The Gateway Eco Hostel",
     address: "Tv. do Fala-Só 24, 1250-096 Lisboa, Portugal",
     description: "Previously GSpot Party Hostel, this hostel has rebranded yet still maintains their communal and upbeat vibe.",
@@ -218,8 +219,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/gspot.png")), filename: 'rec13' )
+  rec13.save
 
-  Rec.create!(
+  rec14 = Rec.create!(
     name: "Calouste Gulbenkian Museum",
     address: "Av. de Berna 45A, 1067-001 Lisboa, Portugal",
     description: "The Calouste Gulbenkian Museum houses one of the world's most important private art collections. It includes works from Ancient Egypt to the early 20th century, spanning the arts of the Islamic World, China and Japan, as well as the French decorative arts and more.",
@@ -230,11 +233,13 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/gulbenkian.png")), filename: 'rec14' )
+  rec14.save
 
-  Rec.create!(
+  rec16 = Rec.create!(
     name: "Padrão dos Descobrimentos",
     address: "Av. Brasília, 1400-038 Lisboa, Portugal",
-    description: "A monument on the northern bank of the Tagus river estuary, in the civil parish of Santa Maria de Belém.",
+    description: "A monument on the northern bank of the Tagus river estuary, in Belém.",
     website: "https://en.wikipedia.org/wiki/Padr%C3%A3o_dos_Descobrimentos",
     rating: 8.9,
     user_id: user.id,
@@ -242,8 +247,10 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec16.photos.attach( io: File.open(Rails.root.join("db/migrate/LikedPlaces_Portugal_Melhor_Destino_Mundo-scaled.jpeg")), filename: 'rec16' )
+  rec16.save
 
-  Rec.create!(
+  rec15 = Rec.create!(
     name: "EastSeven Hostel",
     address: "Schwedter Str. 7, 10119 Berlin, Germany",
     description: "This funky hostel has become one of the most popular budget spots in the city. Combining an intimate atmosphere with clean, smart rooms and decent facilities, it’s a laid-back, friendly and very well-run place.",
@@ -254,5 +261,64 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
+  rec15.photos.attach( io: File.open(Rails.root.join("app/assets/images/Screenshot 2023-03-28 at 20.19.23.png")), filename: 'rec15' )
+  rec15.save
+
+
+  rec17 = Rec.create!(
+    name: "Brigade du Tigre",
+    address: "38 Rue du Faubourg Poissonnière, 75010 Paris, France",
+    description: "Asian cuisine in a bistro-style duplex. Serves small, fragrant nuggets to nibble on your own or to share, concocted from quality products.",
+    website: "https://www.brigadedutigre.fr/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "restaurants"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec17.photos.attach( io: File.open(Rails.root.join("app/assets/images/tigre.png")), filename: 'rec17' )
+  rec17.save!
+
+  rec18 = Rec.create!(
+    name: "Hotel Parma",
+    address: "Salamanca Pasealekua, 10, 20003 Donostia, Gipuzkoa, Spain",
+    description: "This relaxed hotel in the Old Town has ocean-front views and is only a 10-minute walk from Playa de Zurriola.",
+    website: "https://hotelparma.com/en/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "accommodation"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec18.photos.attach( io: File.open(Rails.root.join("app/assets/images/parma.png")), filename: 'rec18' )
+  rec18.save!
+
+  rec19 = Rec.create!(
+    name: "Bar Sport",
+    address: "Fermin Calbeton Kalea, 10, 20003 Donostia, Gipuzkoa, Spain",
+    description: "Bar Sport is renowned for a pretty varied selection of good-quality pintxos and a great night out.",
+    website: "https://www.facebook.com/BarSportDonostia/",
+    rating: 9,
+    user_id: user.id,
+    category: Category.find_by(name: "bars"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec19.photos.attach( io: File.open(Rails.root.join("app/assets/images/barsport.png")), filename: 'rec19' )
+  rec19.save!
+
+  rec20 = Rec.create!(
+    name: "Palacio Miramar",
+    address: "Paseo Miraconcha, 48, 20007 Donostia, Gipuzkoa, Spain",
+    description: "The Miramar Palace is a late 19th-century palace located on La Concha bay. It was built in 1893 commissioned by the Spanish royal family.",
+    website: "https://www.miramar.eus/en/",
+    rating: 10,
+    user_id: user.id,
+    category: Category.find_by(name: "landmarks"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec20.photos.attach( io: File.open(Rails.root.join("app/assets/images/palaciomiramar.png")), filename: 'rec20' )
+  rec20.save!
 
 puts 'Finished!'

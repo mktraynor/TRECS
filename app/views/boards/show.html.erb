@@ -9,7 +9,10 @@
         <div class="col-sm-6 text-end">
           <div>
             <% if policy(@board).edit? %>
-              <%= link_to "Edit board", edit_board_path(@board), class: "btn-primary" %>
+              <%# link_to "Edit board", edit_board_path(@board), class: "btn-primary" %>
+              <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#edit_board_modal">
+                 Edit board
+              </button>
             <% end %>
             <% if policy(@board).destroy? %>
               <%= link_to "Delete board", board_path(@board), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-primary" %>
@@ -51,3 +54,5 @@
     </div>
   </div>
 </div>
+
+<%= render "editmodal", board: @board %>

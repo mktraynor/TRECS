@@ -1,21 +1,43 @@
 <div class= "index-content">
 
   <div class="col-sm-8">
+    <div class="row">
+      <div class="buttons-card">
+        <div class="index-search-category">
+          <%= link_to recs_path(category_id: Category.find_by(name: "accommodation").id) do   %>
+          <i class="fas fa-bed cat_two"></i><div><p style="color: white !important;"><strong>Accomodation</strong></p></div>
+          <% end %>
+          <%= link_to recs_path(category_id: Category.find_by(name: "museums").id) do   %>
+          <i class="fas fa-landmark cat_two"></i><div><p style="color: white !important;"><strong>Museums</strong></p></div>
+          <% end %>
+          <%= link_to recs_path(category_id: Category.find_by(name: "restaurants").id) do   %>
+          <i class="fas fa-utensils cat_two"></i><div><p style="color: white !important;"><strong>Restaurants</strong></p></div>
+          <% end %>
+          <%= link_to recs_path(category_id: Category.find_by(name: "bars").id) do   %>
+          <i class="fas fa-cocktail cat_two"></i><div><p style="color: white !important;"><strong>Bars</strong></p></div>
+          <% end %>
+          <%= link_to recs_path(category_id: Category.find_by(name: "landmarks").id) do   %>
+          <i class="fas fa-monument cat_two"></i><div><p style="color: white !important;"><strong>Landmarks</strong></p></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
     <div class= "cards">
       <% @recs.each do |rec| %>
         <div class="card">
           <% unless rec.photos.first.nil? %>
-              <div class="card-img">
-                <%= cl_image_tag rec.photos.first.key %>
+              <div class="index-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path rec.photos.first.key %>')">
               </div>
           <% end %>
-          <div class="body" style="padding: 8px;">
+          <div class="body" style="padding: 14px; text-align: left;">
             <h5 class="card-title"><strong><%= rec.name %></strong></h5>
             <h6 class="card-subtitle text-muted"><%= rec.category.name.capitalize %></h6><br>
-            <h6 class="card-subtitle"> <i class="fa-regular fa-star"></i> <%= rec.rating %> / 10</h6> <br>
-            <!-- <p class="card-text"> <%= rec.description %> </p> -->
-            <p class="card-text"> <%= rec.address %> </p> <br>
-            <%= link_to "See More", rec_path(rec), class: "btn-primary" %>
+            <h6 class="card-subtitle"><i class="fa-regular fa-star"></i> <%= rec.rating %>/10</h6><br>
+            <h6 class="card-text"><i class="fa-regular fa-house"></i> &nbsp;<%= rec.address %></h6><br>
+          </div>
+          <div style="padding: 8px; text-align: center;">
+            <%= link_to "See More", rec_path(rec), class: "btn-primary", style: "width: 80% !important;" %>
           </div>
         </div>
       <% end %>

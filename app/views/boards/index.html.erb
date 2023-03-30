@@ -1,8 +1,7 @@
 <div id="board-page">
   <div class="board-title">
-    <h1><strong>All Boards</strong></h1>
+    <h1><strong>My Boards</strong></h1>
   </div>
-
   <!-- <div class= "boards-content col-sm-4"> -->
       <div class= "board-cards row row-cols-3">
         <% @user.boards.each do |board| %>
@@ -32,13 +31,14 @@
         <div class="card card-board new-card">
           <div class="card-title">
             <br>
-            <h6><%= link_to "New board", new_board_path, class: "btn-primary btn-new-board" %></h6>
+            <button type="button" class="btn-primary btn-new-board" data-bs-toggle="modal" data-bs-target="#new_board_modal">
+              New board
+             </button>
           </div>
         </div>
       </div>
     </div>
   <!-- </div> -->
-
 <!-- </div> -->
 
-<%# render "newmodal", board: @board%>
+<%= render "newmodal", board: @board%>
