@@ -12,7 +12,7 @@ h1 {
   padding-bottom: 20px;
   margin: 12px;
   display: inline-block;
-  width: 280px;
+  width: 200px;
 }
 
 .btn-drop-pin {
@@ -49,7 +49,24 @@ h1 {
 }
 
 .pin-cards {
-  columns: 4;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 16px 16px;
+  padding: 16px;
+}
+.card-pin {
+  height: 400px !important;
+  width: 400px !important;
+}
+
+.board-pin-card-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  border-radius: 8px 8px 0px 0px;
 }
 
 #hide {
@@ -94,6 +111,6 @@ h1 {
 
 @media (min-width: 1201px) {
   .pin-cards {
-    columns: 4;
+    columns: 3;
   }
 }
