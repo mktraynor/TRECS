@@ -2,8 +2,49 @@
   display: flex;
 }
 
-.category-buttons{
+.buttons-card {
+  height: 86px;
+  width: 100%;
+  background-color: #006D85;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: 12px;
+  color: black;
+  transition: all .2s ease-in-out;
+  padding-bottom: 10px;
+}
 
+.index-search-category {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  :hover {
+    transform: scale(1.02);
+    transition: background 0.2s ease;
+  }
+}
+
+.cat_two {
+  font-size: 24px;
+  background-color: #E9F1F7;
+  color: #FF5572;
+  width: 55px;
+  height: 55px;
+  padding: 14px;
+  border-radius: 50px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  text-decoration: none;
+  padding-bottom: 2px;
 }
 
 .cards {

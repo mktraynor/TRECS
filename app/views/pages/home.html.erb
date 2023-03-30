@@ -19,20 +19,7 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
 
-      <div class="home-search-category">
-        <%= link_to recs_path(category_id: Category.find_by(name: "accommodation").id) do   %>
-          <i class="fas fa-hotel cat_one"></i>
-        <% end %>
-        <%= link_to recs_path(category_id: Category.find_by(name: "museums").id) do   %>
-          <i class="fas fa-landmark cat_one"></i>
-        <% end %>
-        <%= link_to recs_path(category_id: Category.find_by(name: "restaurants").id) do   %>
-          <i class="fas fa-utensils cat_one"></i>
-        <% end %>
-        <%= link_to recs_path(category_id: Category.find_by(name: "bars").id) do   %>
-          <i class="fas fa-cocktail cat_one"></i>
-        <% end %>
-      </div>
+
 
     </div>
   </div>

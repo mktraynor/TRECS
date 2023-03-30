@@ -251,7 +251,7 @@ category_restaurant = Category.create!(
   rec16 = Rec.create!(
     name: "Padrão dos Descobrimentos",
     address: "Av. Brasília, 1400-038 Lisboa, Portugal",
-    description: "A monument on the northern bank of the Tagus river estuary, in the civil parish of Santa Maria de Belém.",
+    description: "A monument on the northern bank of the Tagus river estuary, in Belém.",
     website: "https://en.wikipedia.org/wiki/Padr%C3%A3o_dos_Descobrimentos",
     rating: 8.9,
     user_id: user.id,
