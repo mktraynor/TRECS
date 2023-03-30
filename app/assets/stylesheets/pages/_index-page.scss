@@ -14,7 +14,7 @@ h4 {
 .buttons-card {
   height: 86px;
   width: 100%;
-  background-color: #04A1B3;
+  background-color: white;
   border-bottom: 1px solid lightgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   display: flex;
@@ -28,6 +28,7 @@ h4 {
 .index-card-text {
   display: flex;
   align-items: start;
+  color: $gray;
 }
 
 .index-search-category {
@@ -39,9 +40,10 @@ h4 {
   text-align: center;
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: $gray;
   p, a {
     text-decoration: none;
+    color: $gray;
   }
 
   :hover {
@@ -51,14 +53,14 @@ h4 {
 }
 
 .cat_two {
-  font-size: 24px;
-  background-color: #E9F1F7;
-  color: #FF5572;
-  width: 55px;
-  height: 55px;
+  font-size: 20px;
+  background-color: white;
+  color: $gray;
+  width: 50px;
+  height: 50px;
   padding: 14px;
   border-radius: 50px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  box-shadow: 0 0 4px rgba(0,0,0,0.6);
   text-decoration: none;
   padding-bottom: 2px;
 }
