@@ -8,5 +8,8 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     authorize @user
+    @board = Board.new
+    authorize @board
   end
+
 end

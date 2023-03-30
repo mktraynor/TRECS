@@ -5,8 +5,7 @@
         <p><i class="fas fa-search"></i>    Where do you want to go?</p>
       </div> -->
       <div class="home-title">
-        <h1 style="color: white !important;"><strong>TRECS: Travel recommendations from a trusted social circle.</strong></h1>
-        <h5>Explore authentic travel recommendations <br> suggested by like-minded travellers. </h5>
+        <h1 style="color: white !important;"><strong> Explore travel recommendations from your trusted social circle.</strong></h1>
       </div>
 
       <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
@@ -24,8 +23,10 @@
   <div class="home-recents">
     <h3><strong>Your Destinations</strong></h3>
     <div class="home-boards">
-      <% @boards.each_with_index do |board| %>
-        <% if board.id > 1 && board.id <= 4 %>
+      <% @boards.each do |board| %>
+        <%#% @boards.each_with_index do |board| %>
+        <% unless board.name == "All Pins" %>
+          <%# if board.id > 1 && board.id <= 4 %>
           <div class="card home-card border-0">
             <div class="card-img">
               <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
@@ -47,13 +48,5 @@
         <% end %>
       <% end %>
     </div>
-
-    <!-- <h3><strong>Top destinations</strong></h3>
-    <% @boards.each do |board| %>
-      <% unless board.name == "All Pins" %>
-        <%= board.name %>
-      <% end %>
-    <% end %> -->
   </div>
-
-</div>
+  </div>

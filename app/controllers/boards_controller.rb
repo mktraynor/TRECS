@@ -3,9 +3,10 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :destroy, :edit, :update]
 
   def index
-    # @boards = Board.all
-    @user = current_user
-    @boards = Board.where(user: @user)
+    @boards = Board.all
+    # @user = current_user
+    # @boards = Board.where(user: @user)
+    @filter_boards = Board.all.reject{|board| board.name == "All Pins"}
     @boards = policy_scope(Board)
     @board = Board.new
   end

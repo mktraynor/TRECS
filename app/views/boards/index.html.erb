@@ -6,30 +6,31 @@
 
   <!-- <div class= "boards-content col-sm-4"> -->
       <div class= "board-cards row row-cols-3">
-        <% @user.boards.each do |board| %>
-          <div class="card card-board border-0">
-            <!-- <div class="card-title">
-              <br>
-              <h5><strong><%= board.name %></strong></h5>
-            </div> -->
-            <div class="card-img">
-              <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
-              <div class="imgs">
-                <div class="img big-img">
+          <% @filter_boards.each do |board| %>
+            <%#% @user.boards.each do |board| %>
+            <div class="card card-board border-0">
+              <!-- <div class="card-title">
+                <br>
+                <h5><strong><%= board.name %></strong></h5>
+              </div> -->
+              <div class="card-img">
+                <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+                <div class="imgs">
+                  <div class="img big-img">
+                  </div>
+                </div>
+                <div class="imgs small-imgs">
+                  <div class="img small-img">
+                  </div>
+                  <div class="img small-img">
+                  </div>
                 </div>
               </div>
-              <div class="imgs small-imgs">
-                <div class="img small-img">
-                </div>
-                <div class="img small-img">
-                </div>
+              <div class="card-body">
+                <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
               </div>
             </div>
-            <div class="card-body">
-              <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
         <div class="card card-board new-card">
           <div class="card-title">
             <br>
