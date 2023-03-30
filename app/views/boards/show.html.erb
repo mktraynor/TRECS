@@ -40,7 +40,7 @@
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost btn-drop-sub" %>
                     <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost btn-drop-sub" %>
-                    <button type="button" class="btn-ghost btn-drop-sub" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
+                    <button type="button" class="btn-ghost btn-drop-sub list-group-item-danger" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
                     Move pin
                     </button>
                   </div>

@@ -10,10 +10,8 @@
     <% if current_page?(root_path) %>
     <% else %>
       <div id="search-nav">
-        <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
-          <%= icon = icon('fa-solid', 'magnifying-glass') %>
-          <% quest = "Where would you like to go?" %>
-          <% bar = icon + quest %>
+        <%= form_with url: recs_path, method: :get, class: "d-flex fake-bar" do %>
+          <i class="fa-solid fa-magnifying-glass icon-nav" aria-hidden="true"></i>
           <%= text_field_tag :query,
             params[:query],
             id: "search-form-nav",
@@ -22,7 +20,6 @@
         <% end %>
       </div>
     <% end%>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>

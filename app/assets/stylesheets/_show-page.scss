@@ -1,17 +1,23 @@
+h4 {
+  color: $gray;
+}
+
 .show-content {
   display: flex;
   justify-content: space-around;
+  min-height: 765px;
 }
 .showcard {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
   border-radius: 8px;
   border: 1px solid lightgrey;
   p {
-    font-size: 20px;
+    font-size: 18px;
+    color: $gray;
   }
-  color: black;
   background-color: white;
   padding-top: 15px !important;
   margin: 16px;
@@ -27,6 +33,20 @@
   border: 1px solid lightgrey;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
+
+.card-text {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.save-rec {
+  margin-right: 15px;
+}
+
+.info {
+  margin-top: 50px;
+  margin-bottom: 50px;
 
 .gx-3 {
   --bs-gutter-x: 1.5rem !important;
