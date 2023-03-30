@@ -8,6 +8,10 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 20px;
+
+  h3 {
+    color: $light-gray;
+  }
 }
 
 #home-search {
@@ -16,7 +20,7 @@
   margin-top: 55px;
   margin-bottom: 55px;
   padding: 70px;
-  height: 600px;
+  height: 655px;
   background-image: url("6FF1A7CF-3DA4-4FC8-8600-892916ECC2BB_1_201_a.jpeg");
   background-size: cover;
   border-radius: 5px;
@@ -25,7 +29,7 @@
 }
 
 #home-search-content {
-  padding-top: 100px;
+
 }
 
 #search-form-homepage {
@@ -37,6 +41,7 @@
   margin-right: 10px;
   box-shadow: 3px 3px 5px #006D85;
   font-size: 18px;
+  min-width: 245px;
 }
 
 .d-flex {

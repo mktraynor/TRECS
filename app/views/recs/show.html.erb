@@ -14,7 +14,7 @@
         <div class="row"> <!-- Category, Rating & Edit/Delete buttons -->
           <div class="col-sm-12">
             <h5><%= @rec.category.name.capitalize %></h5>
-            <h5> <i class="fa-solid fa-star"></i> <%= @rec.rating %>/10</h5>
+            <h5> <i class="fa-regular fa-star"></i> <%= @rec.rating %>/10</h5>
           </div>
           <div class="col-sm text-end">
             <div>
@@ -48,18 +48,17 @@
 
         </div>
 
-        <div class="row"> <!-- Body: description, functions, etc. -->
+        <div class="row info"> <!-- Body: description, functions, etc. -->
           <div class="col-sm-12">
-            <br>
             <p>
-              <i class="fa-solid fa-house"></i> &nbsp; <%= @rec.address %>
+              <i class="fa-regular fa-map"></i> &nbsp; <%= @rec.address %>
             </p>
             <p>
-              <i class="fa-solid fa-quote-left"></i> &nbsp; <%= @rec.description %> &nbsp; <i class="fa-solid fa-quote-right"></i>
+              <i class="fa-regular fa-pen-to-square"></i> &nbsp; <%= @rec.description %>
 
             </p>
             <p class="card-text">
-              <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
+              <button type="button" class="btn-primary save-rec" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
                 Save rec
               </button>
               <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
@@ -67,7 +66,6 @@
             </p>
           </div>
         </div>
-        <br>
         <hr>
         <br>
 

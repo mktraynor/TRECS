@@ -10,14 +10,12 @@
     <% if current_page?(root_path) %>
     <% else %>
       <div id="search-nav">
-        <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
-          <%= icon = icon('fa-solid', 'magnifying-glass') %>
-          <% quest = "What do you want to search?" %>
-          <% bar = icon + quest %>
+        <%= form_with url: recs_path, method: :get, class: "d-flex fake-bar" do %>
+          <i class="fa-solid fa-magnifying-glass icon-nav" aria-hidden="true"></i>
           <%= text_field_tag :query,
             params[:query],
             id: "search-form-nav",
-            placeholder: "What do you want to search?"
+            placeholder: "Where do you want to go?"
           %>
         <% end %>
       </div>

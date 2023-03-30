@@ -60,7 +60,7 @@
 .img {
   border-radius: 5px;
   border-color: black;
-  width: 100px;
+  width: 95%;
   background-color: $light-gray;
   margin: 3px;
 }
@@ -88,7 +88,7 @@
   margin-right: 10%;
   margin-top: 55px;
   margin-bottom: 55px;
-  height: 600px;
+  min-height: 650px;
   border-radius: 5px;
   align-content: center;
 }
@@ -98,15 +98,4 @@
   border-radius: 50px;
   font-weight: bold;
   background-color: $blue;
-}
-
-#board-page {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 55px;
-  margin-bottom: 55px;
-  height: 600px;
-  border-radius: 5px;
-  align-content: center;
-
 }

@@ -1,7 +1,6 @@
 <div id="board-page">
   <div class="board-title">
     <h1><strong>All Boards</strong></h1>
-    <h6><%= link_to "+", new_board_path, class: "btn-primary", id: "create-board" %></h6>
   </div>
 
   <!-- <div class= "boards-content col-sm-4"> -->
@@ -33,16 +32,11 @@
         <div class="card card-board new-card">
           <div class="card-title">
             <br>
-            <div class="nav-item dropdown">
-            <%= button_tag "New Board", class: "avatar dropdown-toggle btn-primary btn-new-board", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "New board", new_board_path, class: "dropdown-item" %>
-
-              </div>
-            </div>
+            <h6><%= link_to "New board", new_board_path, class: "btn-primary btn-new-board" %></h6>
           </div>
         </div>
       </div>
+    </div>
   <!-- </div> -->
 
 <!-- </div> -->
