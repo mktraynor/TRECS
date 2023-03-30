@@ -36,8 +36,10 @@
             <div class="nav-item dropdown">
             <%= button_tag "New Board", class: "avatar dropdown-toggle btn-primary btn-new-board", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "New board", new_board_path, class: "dropdown-item" %>
-
+                <%# link_to "New board", new_board_path, class: "dropdown-item" %>
+                <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_board_modal">
+                 New board
+              </button>
               </div>
             </div>
           </div>
@@ -47,4 +49,4 @@
 
 <!-- </div> -->
 
-<%# render "newmodal", board: @board%>
+<%= render "newmodal", board: @board%>
