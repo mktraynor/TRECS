@@ -3,9 +3,9 @@
     <div class= "container-sm">
       <div class="row"> <!-- Title & Username (NEED TO ADD USERNAME TO USER TABLE) -->
         <div class="col-sm-6">
-          <h1 style="color: black;"><strong><%= @rec.name %></strong></h1>
+          <h1><strong><%= @rec.name %></strong></h1>
           <h5><%= @rec.category.name.capitalize %></h5>
-          <h5> <i class="fa-solid fa-star"></i> <%= @rec.rating %>/10</h5>
+          <h5><i class="fa-regular fa-star"></i></i> <%= @rec.rating %>/10</h5>
         </div>
         <div class="col-sm-6 text-end">
           <br>
@@ -42,14 +42,6 @@
           </div>
         </div>
       </div>
-      <div class="row"> <!-- Body: description, functions, etc. -->
-        <div class="col-sm-12">
-          <br>
-          <p>
-            <i class="fa-solid fa-house"></i>&nbsp; <%= @rec.address %>
-          </p>
-          <p>
-            <i class="fa-solid fa-quote-left"></i>&nbsp; <%= @rec.description %> &nbsp;<i class="fa-solid fa-quote-right"></i>
         <div class="row info"> <!-- Body: description, functions, etc. -->
           <div class="col-sm-12">
             <p>

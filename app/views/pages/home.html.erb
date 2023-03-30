@@ -1,17 +1,13 @@
 <div class="flex-page">
   <div id="home-search">
     <div class="home-title">
-      <h3><strong>Travel recommendations from <br> your trusted social circle</strong></h3>
+      <br><br><br><br>
+      <h1 style="color: white !important;"><strong> Explore travel recommendations from your trusted social circle.</strong></h1>
     </div>
     <div id="home-search-content">
       <!-- <div class="search-placeholder">
         <p><i class="fas fa-search"></i>    Where do you want to go?</p>
       </div> -->
-
-      <div class="home-title">
-        <h1 style="color: white !important;"><strong> Explore travel recommendations from your trusted social circle.</strong></h1>
-      </div>
-
       <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],

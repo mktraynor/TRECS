@@ -109,7 +109,7 @@ category_restaurant = Category.create!(
 
   rec4 = Rec.create!(
     name: "Barrafina",
-    address: "26-27 Dean St, London, United Kingdom W1D 3LL",
+    address: "26-27 Dean St, London W1D 3LL",
     description: "The informal, Michelin-starred restaurant has an open kitchen, a marble-topped bar and leather stools where guests sit and watch the chefs at work. The a-la-carte menu offers regional Spanish dishes, while daily-changing specials showcase the best seafood and seasonal ingredients.",
     website: "https://www.barrafina.co.uk/restaurants/dean-street/menu",
     rating: 9.8,
@@ -119,7 +119,7 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  rec4.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (1).jpeg")), filename: 'rec4' )
+  rec4.photos.attach( io: File.open(Rails.root.join("app/assets/images/saatchi.jpg")), filename: 'rec4' )
   rec4.save
 
 
@@ -135,7 +135,7 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  rec5.photos.attach( io: File.open(Rails.root.join("app/assets/images/2466164.jpeg.crdownload")), filename: 'rec5' )
+  rec5.photos.attach( io: File.open(Rails.root.join("app/assets/images/phoenix.jpg")), filename: 'rec5' )
   rec5.save
 
   rec9 = Rec.create!(

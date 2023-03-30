@@ -25,6 +25,11 @@ h4 {
   padding-bottom: 10px;
 }
 
+.index-card-text {
+  display: flex;
+  align-items: center;
+}
+
 .index-search-category {
   margin-left: auto;
   margin-right: auto;
@@ -35,6 +40,9 @@ h4 {
   display: flex;
   justify-content: space-between;
   color: white;
+  p, a {
+    text-decoration: none;
+  }
 
   :hover {
     transform: scale(1.02);
