@@ -1,7 +1,6 @@
 <div class="flex-page">
   <div id="home-search">
     <div class="home-title">
-      <br><br><br><br>
       <h1 style="color: white !important;"><strong> Explore travel recommendations from your trusted social circle.</strong></h1>
     </div>
     <div id="home-search-content">
@@ -15,8 +14,25 @@
           id: "search-form-homepage",
           placeholder: "Where would you like to go?"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", class: "btn btn-primary", style: "box-shadow: 3px 3px 5px #006d85;"%>
       <% end %>
+      <div class="home-search-category">
+        <%= link_to recs_path(category_id: Category.find_by(name: "accommodation").id) do   %>
+          <i class="fas fa-hotel cat_one"></i>
+        <% end %>
+        <%= link_to recs_path(category_id: Category.find_by(name: "museums").id) do   %>
+          <i class="fas fa-landmark cat_one"></i>
+        <% end %>
+        <%= link_to recs_path(category_id: Category.find_by(name: "restaurants").id) do   %>
+          <i class="fas fa-utensils cat_one"></i>
+        <% end %>
+        <%= link_to recs_path(category_id: Category.find_by(name: "bars").id) do   %>
+          <i class="fas fa-cocktail cat_one"></i>
+        <% end %>
+        <%= link_to recs_path(category_id: Category.find_by(name: "landmarks").id) do   %>
+          <i class="fas fa-monument cat_one"></i>
+          <% end %>
+      </div>
     </div>
   </div>
 
