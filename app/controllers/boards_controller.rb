@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_board, only: [:show, :destroy, :edit, :update]
+  before_action :set_rec, only: [:index]
 
   def index
     # @boards = Board.all
@@ -63,4 +64,10 @@ class BoardsController < ApplicationController
   def set_board
     @board = Board.find(params[:id])
   end
+
+  def set_rec
+    @rec = Board.first.pins.first.rec
+  end
+
+
 end

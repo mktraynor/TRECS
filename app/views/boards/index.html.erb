@@ -9,9 +9,7 @@
       <div class= "board-cards row row-cols-4">
         <% @user.boards.each do |board| %>
           <div class="card card-board border-0">
-            <!--
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pin.rec.photos.first.key %>')"></div>
-            -->
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @rec.photos.first.key %>')"></div>
             <div class="card-body">
               <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
             </div>

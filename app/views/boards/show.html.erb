@@ -36,16 +36,12 @@
                 </div>
                 <div class="card-body pin-body" id="hide">
                   <p><%= pin.rec.address %></p>
-                  <div class="nav-item dropdown" style="text-align: center;">
-                    <%= button_tag "Options", class: "btn-ghost btn-drop-pin", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <div style="text-align: center">
                       <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost btn-drop-sub" %>
                       <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost btn-drop-sub" %>
-                    <!--
                       <button type="button" class="btn-ghost btn-drop-sub list-group-item-danger" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
                       Move pin
-                      </button> -->
-                    </div>
+                      </button>
                   </div>
                 </div>
               </div>
