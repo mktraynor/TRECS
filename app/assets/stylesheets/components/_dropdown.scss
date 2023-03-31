@@ -1,0 +1,25 @@
+.dropbtn {
+  color: #4A4A4A;
+  border: 1.5px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
