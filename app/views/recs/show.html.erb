@@ -3,9 +3,9 @@
     <div class= "container-sm">
       <div class="row"> <!-- Title & Username (NEED TO ADD USERNAME TO USER TABLE) -->
         <div class="col-sm-6">
-          <h1 style="color: black;"><strong><%= @rec.name %></strong></h1>
+          <h1><strong><%= @rec.name %></strong></h1>
           <h5><%= @rec.category.name.capitalize %></h5>
-          <h5> <i class="fa-solid fa-star"></i> <%= @rec.rating %>/10</h5>
+          <h5><i class="fa-regular fa-star"></i></i> <%= @rec.rating %>/10</h5>
         </div>
         <div class="col-sm-6 text-end">
           <br>
@@ -42,25 +42,17 @@
           </div>
         </div>
       </div>
-      <div class="row"> <!-- Body: description, functions, etc. -->
-        <div class="col-sm-12">
-          <br>
-          <p>
-            <i class="fa-solid fa-house"></i>&nbsp; <%= @rec.address %>
-          </p>
-          <p>
-            <i class="fa-solid fa-quote-left"></i>&nbsp; <%= @rec.description %> &nbsp;<i class="fa-solid fa-quote-right"></i>
         <div class="row info"> <!-- Body: description, functions, etc. -->
           <div class="col-sm-12">
             <p>
-              <i class="fa-regular fa-map"></i> &nbsp; <%= @rec.address %>
+              <i class="fa-regular fa-map"></i> &nbsp;<%= @rec.address %>
             </p>
             <p>
-              <i class="fa-regular fa-pen-to-square"></i> &nbsp; <%= @rec.description %>
+              <i class="fa-regular fa-pen-to-square"></i> &nbsp;<%= @rec.description %>
             </p>
             <p class="card-text">
               <button type="button" class="btn-primary save-rec" data-bs-toggle="modal" data-bs-target="#new_pin_modal">
-                Save rec
+                Save Rec
               </button>
               <%= link_to "Visit Website", @rec.website, class: "btn-primary" %>
               <br>
@@ -102,7 +94,7 @@
           <!-- Comment button -->
           <div style="margin-bottom: 30px;">
             <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#new_review_modal">
-              Add a comment
+              Add a Comment
             </button>
           </div>
         </div>
