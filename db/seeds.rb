@@ -38,12 +38,12 @@ category_restaurant = Category.create!(
   )
 
   user2 = User.create!(
-    email: "Eneko123.@gmail.com",
+    email: "Eneko123@gmail.com",
     password: "123456"
   )
 
   user3 = User.create!(
-    email: "thomas.tottington.@gmail.com",
+    email: "thomas.tottington@gmail.com",
     password: "123456"
   )
 
@@ -262,5 +262,33 @@ category_restaurant = Category.create!(
   )
   rec20.photos.attach( io: File.open(Rails.root.join("app/assets/images/palaciomiramar.png")), filename: 'rec20' )
   rec20.save!
+
+  rec21 = Rec.create!(
+    name: "La Cuchara de San Telmo",
+    address: "Santa Korda Kalea, 4, 20003 Donostia, Gipuzkoa, Spain",
+    description: "Everything here is so good! Tender suckling pig, succulent txuleta, rich veal cheeks in red wine, beautiful bacalao, the best scallops ever.",
+    website: "https://www.facebook.com/people/La-Cuchara-de-San-Telmo/100063740823302/?paipv=0&eav=AfZvs-fpkHgs4GK3ABms-f-zpWuHI5X0ujR5-NxMSuuRgVujXHiTmtfYx3kpN-mGWCk&_rdr",
+    rating: 9,
+    user_id: user2.id,
+    category: Category.find_by(name: "restaurants"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec21.photos.attach( io: File.open(Rails.root.join("app/assets/images/santelmo.png")), filename: 'rec21' )
+  rec21.save!
+
+  rec22 = Rec.create!(
+    name: "The Old Bell Tavern",
+    address: "95 Fleet St, Greater, London EC4Y 1DH",
+    description: "Classic real ale pub behind stained glass frontage, used by Wren's stone masons in the 17th century.",
+    website: "https://www.nicholsonspubs.co.uk/restaurants/london/theoldbelltavernfleetstreetlondon?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    rating: 8,
+    user_id: user3.id,
+    category: Category.find_by(name: "bars"),
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+  rec22.photos.attach( io: File.open(Rails.root.join("app/assets/images/oldbell.jpeg")), filename: 'rec22' )
+  rec22.save!
 
 puts 'Finished!'
