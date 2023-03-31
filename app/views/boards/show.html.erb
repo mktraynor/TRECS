@@ -8,7 +8,7 @@
           <p><%= "You haven't saved any recommendations yet!" if @board.pins.empty? %></p>
         </div>
         <div class="col-sm-6 text-end">
-          <div>
+          <div class="edit-btns">
             <% if policy(@board).edit? %>
               <%# link_to "Edit board", edit_board_path(@board), class: "btn-primary" %>
               <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#edit_board_modal">
@@ -25,26 +25,22 @@
       <div class= "row">
         <div class= "pin-cards">
           <% @board.pins.each do |pin| %>
-            <div class="card-pin">
-              <div class="card pin">
-                <div class="board-pin-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pin.rec.photos.first.key %>')">
-                </div>
-                <div>
-                  <br>
-                  <h5 class="card-title"><strong><%= pin.rec.name %></strong></h5>
-                  <h6 class="card-subtitle text-muted"><%= pin.rec.category.name.capitalize %></h6><br>
-                </div>
-                <div class="card-body pin-body" id="hide">
-                  <p><%= pin.rec.address %></p>
-                  <div class="nav-item dropdown" style="text-align: center;">
-                    <%= button_tag "Options", class: "avatar dropdown-toggle btn-ghost btn-drop-pin", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <%= link_to "See more", rec_path(pin.rec_id), class: "btn-ghost btn-drop-sub" %>
-                      <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "btn-ghost btn-drop-sub" %>
-                      <button type="button" class="btn-ghost btn-drop-sub list-group-item-danger" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
-                      Move pin
-                      </button>
-                    </div>
+            <% height = rand(200..500) %>
+            <div class="card pin" style="height: <%= height %>px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pin.rec.photos.first.key %>')">
+              <div class="card-title">
+                <br>
+                <h5><strong><%= pin.rec.name%></strong></h5>
+              </div>
+              <div class="card-body pin-body" id="hide">
+                <p><%= pin.rec.address %></p>
+                <div class="nav-item dropdown">
+                  <%= button_tag "Options", class: "avatar dropdown-toggle btn-ghost btn-drop-pin", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "See more", rec_path(pin.rec_id), class: "dropdown-item" %>
+                    <%= link_to "Remove pin", pin_path(pin),  data: { turbo_method: :delete, turbo_confirm: "Remove #{pin.rec.name} from #{@board.name}?" }, class: "dropdown-item" %>
+                    <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_pin_modal_<%= pin.id %>">
+                    Move pin
+                    </button>
                   </div>
                 </div>
               </div>

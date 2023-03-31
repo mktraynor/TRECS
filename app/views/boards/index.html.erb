@@ -1,33 +1,63 @@
-<div class="show-content">
-  <div class="showcard">
-    <div class= "container-sm">
 
-      <div class="row" style="text-align: center;">
-        <h1><strong>My Boards</strong></h1>
-      </div>
-
-      <div class= "board-cards row row-cols-4">
-        <% @user.boards.each do |board| %>
-          <div class="card card-board border-0">
-            <!--
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pin.rec.photos.first.key %>')"></div>
-            -->
-            <div class="card-body">
-              <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
+<div id="board-page">
+  <div class="board-title">
+    <h1><strong>My Boards</strong></h1>
+  </div>
+  <!-- <div class= "boards-content col-sm-4"> -->
+  <div class= "board-cards row row-cols-3">
+    <% @boards.each do |board| %>
+      <div class="card card-board border-0">
+        <!-- <div class="card-title">
+          <br>
+          <h5><strong><%= board.name %></strong></h5>
+        </div> -->
+        <div class="card-img">
+          <%# cl_image_tag rec.photo.first.key, height: 100px, width: auto, crop: :fill %>
+          <% if board.pins.empty? %>
+            <div class="imgs">
+              <div class="img big-img">
+              </div>
             </div>
-          </div>
-        <% end %>
-        <div class="card card-board new-card">
-          <div class="card-title">
-            <br><br><br>
-            <button type="button" class="btn-primary btn-new-board" data-bs-toggle="modal" data-bs-target="#new_board_modal">
-              New board
-             </button>
-          </div>
+            <div class="imgs small-imgs">
+              <div class="img small-img">
+              </div>
+              <div class="img small-img">
+              </div>
+            </div>
+
+          <% elsif board.pins.size >= 3 %>
+            <div class="imgs">
+              <div class="index-card-img img big-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pins.first.rec.photos.first.key %>')">
+              </div>
+            </div>
+            <div class="imgs small-imgs">
+              <div class="index-card-img img small-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pins[1].rec.photos.first.key %>')">
+              </div>
+              <div class="index-card-img img small-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pins[2].rec.photos.first.key %>')">
+              </div>
+            </div>
+
+          <% else %>
+            <div class="index-card-img img big-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.pins.first.rec.photos.first.key %>')">
+            </div>
+          <% end %>
         </div>
+        <div class="card-body">
+          <%= link_to board.name, board_path(board), class: "board-to-pin btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="card card-board new-card">
+      <div class="card-title">
+        <br>
+        <button type="button" class="btn-primary btn-new-board" data-bs-toggle="modal" data-bs-target="#new_board_modal">
+          New board
+        </button>
       </div>
     </div>
   </div>
 </div>
 
+
 <%= render "newmodal", board: @board%>
+</div>
