@@ -67,6 +67,7 @@
 
 .big-img {
   height: 100%;
+  background-size: cover;
 }
 
 .small_imgs{
@@ -74,7 +75,8 @@
 }
 
 .small-img {
-  height: 48px;
+  height: 48%;
+  background-size: cover;
 }
 
 .row {

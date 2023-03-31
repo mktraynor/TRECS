@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
     @boards = Board.where(user: @user)
     @boards = policy_scope(Board)
     @board = Board.new
+
   end
 
   def show
