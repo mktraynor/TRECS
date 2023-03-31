@@ -65,34 +65,6 @@ category_restaurant = Category.create!(
   rec2.photos.attach( io: File.open(Rails.root.join("app/assets/images/aloha_hostel.jpeg")), filename: 'rec2' )
   rec2.save
 
-  rec7 = Rec.create!(
-    name: "Centre Pompidou",
-    address: "Place Georges-Pompidou, 75004 Paris, France",
-    description: "Home to Europe's largest collection of modern and contemporary art. Amazing not just for its outstanding art, but also for its radical architecture. Don't miss the spectacular view from the rooftop.",
-    website: "https://www.centrepompidou.fr/en/",
-    rating: 9.5,
-    user_id: user.id,
-    category: Category.find_by(name: "museums"),
-    created_at: Time.now,
-    updated_at: Time.now
-  )
-  rec7.photos.attach( io: File.open(Rails.root.join("app/assets/images/180625153140-centre-pompidou-super-tease.jpeg")), filename: 'rec7' )
-  rec7.save
-
-  rec3 = Rec.create!(
-    name: "Harry's Bar",
-    address: "5 Rue Daunou, 75002 Paris, France",
-    description: "In 1911, a jockey dismantled a New York bar and re-installed it on Rue Daunou in Paris. Classic, bespoke & Cuban-style cocktails in a chic, wood-lined space with a piano bar in the cellar. Thursday and Friday are jazz nights at Harry's.",
-    website: "https://www.harrysbar.fr/language/en/",
-    rating: 8.4,
-    user_id: user.id,
-    category: Category.find_by(name: "bars"),
-    created_at: Time.now,
-    updated_at: Time.now
-  )
-  rec3.photos.attach( io: File.open(Rails.root.join("app/assets/images/harrys.jpg")), filename: 'rec3' )
-  rec3.save
-
   rec4 = Rec.create!(
     name: "Barrafina",
     address: "26-27 Dean St, London W1D 3LL",
@@ -137,20 +109,6 @@ category_restaurant = Category.create!(
   )
   rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/saatchi.jpg")), filename: 'rec9' )
   rec9.save
-
-  rec6 = Rec.create!(
-    name: "Borough Market",
-    address: "8 Southwark St, London SE1 1TL",
-    description: "Borough Market is a wholesale and retail food market hall in Southwark. It is one of the largest and oldest food markets in London, with a market on the site dating back to at least the 12th century.",
-    website: "https://boroughmarket.org.uk/",
-    rating: 9.5,
-    user_id: user.id,
-    category: Category.find_by(name: "landmarks"),
-    created_at: Time.now,
-    updated_at: Time.now
-  )
-  rec6.photos.attach( io: File.open(Rails.root.join("db/migrate/th (2).jpeg")), filename: 'rec6' )
-  rec6.save
 
   rec10 = Rec.create!(
     name: "Ye Olde Cheshire Cheese",
@@ -221,20 +179,6 @@ category_restaurant = Category.create!(
   )
   rec14.photos.attach( io: File.open(Rails.root.join("app/assets/images/gulbenkian.png")), filename: 'rec14' )
   rec14.save
-
-  rec16 = Rec.create!(
-    name: "Padrão dos Descobrimentos",
-    address: "Av. Brasília, 1400-038 Lisboa, Portugal",
-    description: "A monument on the northern bank of the Tagus river estuary, in Belém.",
-    website: "https://en.wikipedia.org/wiki/Padr%C3%A3o_dos_Descobrimentos",
-    rating: 8.9,
-    user_id: user.id,
-    category: Category.find_by(name: "museums"),
-    created_at: Time.now,
-    updated_at: Time.now
-  )
-  rec16.photos.attach( io: File.open(Rails.root.join("db/migrate/LikedPlaces_Portugal_Melhor_Destino_Mundo-scaled.jpeg")), filename: 'rec16' )
-  rec16.save
 
   rec15 = Rec.create!(
     name: "EastSeven Hostel",
