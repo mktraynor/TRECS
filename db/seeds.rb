@@ -32,8 +32,18 @@ category_restaurant = Category.create!(
     name: "landmarks"
   )
 
-  user = User.create!(
+  user1 = User.create!(
     email: "nomadicluna@gmail.com",
+    password: "123456"
+  )
+
+  user2 = User.create!(
+    email: "Eneko123.@gmail.com",
+    password: "123456"
+  )
+
+  user3 = User.create!(
+    email: "thomas.tottington.@gmail.com",
     password: "123456"
   )
 
@@ -43,7 +53,7 @@ category_restaurant = Category.create!(
     description: "Set in a picturesque side street, this 1936 bistro has authentic furniture, vintage tiled flooring, and a gilded ceiling. The food is equally genuine: country pâté, creamy polenta, or dark chocolate tart. This is a restaurant that fully deserves its success.",
     website: "https://www.parcelles-paris.fr/en/",
     rating: 8.9,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
@@ -57,7 +67,7 @@ category_restaurant = Category.create!(
     description: "Centrally located and affordable, the hostel is within easy walking distance of Paris' most famous sites. With Volontaires Metro station only 5 minutes away, the rest of Paris is easy to explore. A clean and homely hostel with private rooms also available.",
     website: "http://aloha.fr/en/home/",
     rating: 7.1,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
@@ -65,13 +75,14 @@ category_restaurant = Category.create!(
   rec2.photos.attach( io: File.open(Rails.root.join("app/assets/images/aloha_hostel.jpeg")), filename: 'rec2' )
   rec2.save
 
+
   rec4 = Rec.create!(
     name: "Barrafina",
     address: "26-27 Dean St, London W1D 3LL",
     description: "The informal, Michelin-starred restaurant has an open kitchen, a marble-topped bar and leather stools where guests sit and watch the chefs at work. The a-la-carte menu offers regional Spanish dishes, while daily-changing specials showcase the best seafood and seasonal ingredients.",
     website: "https://www.barrafina.co.uk/restaurants/dean-street/menu",
     rating: 9.8,
-    user_id: user.id,
+    user_id: user3.id,
     category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
@@ -87,7 +98,7 @@ category_restaurant = Category.create!(
     description: "Housed in a homely English-style pub, the Phoenix is perfectly located with all main attractions and tube stations being only 100+ yards away. Great for those on a tight budget looking for somewhere to lay their head after a few pints.",
     website: "https://www.phoenixhostel.co.uk/",
     rating: 6.2,
-    user_id: user.id,
+    user_id: user3.id,
     category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
@@ -102,7 +113,7 @@ category_restaurant = Category.create!(
     description: "The Saatchi Gallery showcases contemporary works of art focusing on young artists and international artists who have rarely been seen in the UK. Committed to inspire a passion for contemporary art in all audiences.",
     website: "https://www.saatchigallery.com/",
     rating: 8.9,
-    user_id: user.id,
+    user_id: user3.id,
     category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
@@ -110,13 +121,14 @@ category_restaurant = Category.create!(
   rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/saatchi.jpg")), filename: 'rec9' )
   rec9.save
 
+
   rec10 = Rec.create!(
     name: "Ye Olde Cheshire Cheese",
     address: "145 Fleet St, London EC4A 2BP",
     description: "Historic gathering place doling out carefully sourced pub grub, wine & draught beer.",
     website: "https://ye-olde-cheshire-cheese.co.uk/",
     rating: 8.5,
-    user_id: user.id,
+    user_id: user3.id,
     category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
@@ -130,7 +142,7 @@ category_restaurant = Category.create!(
     description: "Ao26 is one of the best vegan restaurants in Lisbon. It is a great place to go with non-vegan/vegetarian friends.",
     website: "https://letsumai.com/widget/26-vegan-food-project",
     rating: 8.2,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
@@ -144,7 +156,7 @@ category_restaurant = Category.create!(
     description: "Famous, historic jazz club with local performers & big name guests in an intimate cellar setting.",
     website: "https://hcp.pt/",
     rating: 8.9,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
@@ -158,7 +170,7 @@ category_restaurant = Category.create!(
     description: "Previously GSpot Party Hostel, this hostel has rebranded yet still maintains their communal and upbeat vibe.",
     website: "https://www.gatewayhostel.com/",
     rating: 7.6,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
@@ -172,7 +184,7 @@ category_restaurant = Category.create!(
     description: "The Calouste Gulbenkian Museum houses one of the world's most important private art collections. It includes works from Ancient Egypt to the early 20th century, spanning the arts of the Islamic World, China and Japan, as well as the French decorative arts and more.",
     website: "https://gulbenkian.pt/museu/en/",
     rating: 9.2,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "museums"),
     created_at: Time.now,
     updated_at: Time.now
@@ -186,7 +198,7 @@ category_restaurant = Category.create!(
     description: "This funky hostel has become one of the most popular budget spots in the city. Combining an intimate atmosphere with clean, smart rooms and decent facilities, it’s a laid-back, friendly and very well-run place.",
     website: "https://eastseven.de/en/",
     rating: 8.4,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
@@ -201,7 +213,7 @@ category_restaurant = Category.create!(
     description: "Asian cuisine in a bistro-style duplex. Serves small, fragrant nuggets to nibble on your own or to share, concocted from quality products.",
     website: "https://www.brigadedutigre.fr/",
     rating: 9,
-    user_id: user.id,
+    user_id: user1.id,
     category: Category.find_by(name: "restaurants"),
     created_at: Time.now,
     updated_at: Time.now
@@ -215,7 +227,7 @@ category_restaurant = Category.create!(
     description: "This relaxed hotel in the Old Town has ocean-front views and is only a 10-minute walk from Playa de Zurriola.",
     website: "https://hotelparma.com/en/",
     rating: 9,
-    user_id: user.id,
+    user_id: user2.id,
     category: Category.find_by(name: "accommodation"),
     created_at: Time.now,
     updated_at: Time.now
@@ -229,7 +241,7 @@ category_restaurant = Category.create!(
     description: "Bar Sport is renowned for a pretty varied selection of good-quality pintxos and a great night out.",
     website: "https://www.facebook.com/BarSportDonostia/",
     rating: 9,
-    user_id: user.id,
+    user_id: user2.id,
     category: Category.find_by(name: "bars"),
     created_at: Time.now,
     updated_at: Time.now
@@ -243,7 +255,7 @@ category_restaurant = Category.create!(
     description: "The Miramar Palace is a late 19th-century palace located on La Concha bay. It was built in 1893 commissioned by the Spanish royal family.",
     website: "https://www.miramar.eus/en/",
     rating: 10,
-    user_id: user.id,
+    user_id: user2.id,
     category: Category.find_by(name: "landmarks"),
     created_at: Time.now,
     updated_at: Time.now
