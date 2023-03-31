@@ -219,7 +219,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/gspot.png")), filename: 'rec13' )
+  rec13.photos.attach( io: File.open(Rails.root.join("app/assets/images/gateway.png")), filename: 'rec13' )
   rec13.save
 
   rec14 = Rec.create!(
