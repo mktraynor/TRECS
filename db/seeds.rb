@@ -266,7 +266,7 @@ category_restaurant = Category.create!(
   rec21 = Rec.create!(
     name: "La Cuchara de San Telmo",
     address: "Santa Korda Kalea, 4, 20003 Donostia, Gipuzkoa, Spain",
-    description: "Everything here is so good! Tender suckling pig, succulent txuleta, rich veal cheeks in red wine, beautiful bacalao, the best scallops ever.",
+    description: "Everything here is so good! Tender suckling pig, succulent txuleta, rich veal cheeks in red wine, beautiful bacalao, the best scallops ever. I've been coming here for years.",
     website: "https://www.facebook.com/people/La-Cuchara-de-San-Telmo/100063740823302/?paipv=0&eav=AfZvs-fpkHgs4GK3ABms-f-zpWuHI5X0ujR5-NxMSuuRgVujXHiTmtfYx3kpN-mGWCk&_rdr",
     rating: 9,
     user_id: user2.id,
