@@ -79,20 +79,6 @@ category_restaurant = Category.create!(
   rec7.photos.attach( io: File.open(Rails.root.join("app/assets/images/180625153140-centre-pompidou-super-tease.jpeg")), filename: 'rec7' )
   rec7.save
 
-  rec8 = Rec.create!(
-    name: "Sacré-Cœur Basilica",
-    address: "35 Rue du Chevalier de la Barre, 75018 Paris, France",
-    description: "The 2nd-highest structure in Paris. The all-white structure sits on top of Montmartre, so you can easily see it from many places in the city. The Roman-Byzantine architecture is unusual for Paris, with its dome beautifully contrasting with the rest of the city.",
-    website: "https://www.sacre-coeur-montmartre.com/english/",
-    rating: 9.7,
-    user_id: user.id,
-    category: Category.find_by(name: "museums"),
-    created_at: Time.now,
-    updated_at: Time.now
-  )
-  rec8.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec8' )
-  rec8.save
-
   rec3 = Rec.create!(
     name: "Harry's Bar",
     address: "5 Rue Daunou, 75002 Paris, France",
