@@ -119,7 +119,7 @@ category_restaurant = Category.create!(
     updated_at: Time.now
   )
 
-  rec4.photos.attach( io: File.open(Rails.root.join("app/assets/images/saatchi.jpg")), filename: 'rec4' )
+  rec4.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (1).jpeg")), filename: 'rec4' )
   rec4.save
 
 
@@ -149,7 +149,7 @@ category_restaurant = Category.create!(
     created_at: Time.now,
     updated_at: Time.now
   )
-  rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/th (3).jpeg")), filename: 'rec9' )
+  rec9.photos.attach( io: File.open(Rails.root.join("app/assets/images/saatchi.jpg")), filename: 'rec9' )
   rec9.save
 
   rec6 = Rec.create!(
