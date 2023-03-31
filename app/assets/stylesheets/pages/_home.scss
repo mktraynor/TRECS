@@ -8,6 +8,7 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 20px;
+  text-shadow:  0px 0px 10px $gray;
 
   h3 {
     color: $light-gray;
@@ -20,6 +21,7 @@
   margin-top: 55px;
   margin-bottom: 55px;
   padding: 70px;
+  padding-top: 150px;
   height: 655px;
   background-image: url("6FF1A7CF-3DA4-4FC8-8600-892916ECC2BB_1_201_a.jpeg");
   background-size: cover;
@@ -29,7 +31,6 @@
 }
 
 #home-search-content {
-
 }
 
 #search-form-homepage {
