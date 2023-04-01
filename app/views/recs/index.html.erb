@@ -4,22 +4,20 @@
     <div class="row">
       <div class="buttons-card">
         <div class="index-search-category">
-          <%# link_to recs_path(category_id: Category.find_by(name: "accommodation").id) do   %>
-          <!-- <i class="fas fa-bed cat_two"></i><div><p><strong>Accommodation</strong></p></div> -->
-          <%# end %>
-          <a href="http://www.trecs.world/recs?query=donostia+accommodation"><i class="fas fa-bed cat_two"></i><div><p><strong>Accommodation</strong></p></div></a>
-
+          <%= link_to recs_path(category_id: Category.find_by(name: "accommodation").id) do   %>
+            <i class="fas fa-bed cat_two"></i><div><p><strong>Accommodation</strong></p></div>
+          <% end %>
           <%= link_to recs_path(category_id: Category.find_by(name: "museums").id) do   %>
-          <i class="fas fa-landmark cat_two"></i><div><p><strong>Museums</strong></p></div>
+            <i class="fas fa-landmark cat_two"></i><div><p><strong>Museums</strong></p></div>
           <% end %>
           <%= link_to recs_path(category_id: Category.find_by(name: "restaurants").id) do   %>
-          <i class="fas fa-utensils cat_two"></i><div><p><strong>Restaurants</strong></p></div>
+            <i class="fas fa-utensils cat_two"></i><div><p><strong>Restaurants</strong></p></div>
           <% end %>
           <%= link_to recs_path(category_id: Category.find_by(name: "bars").id) do   %>
-          <i class="fas fa-cocktail cat_two"></i><div><p><strong>Bars</strong></p></div>
+            <i class="fas fa-cocktail cat_two"></i><div><p><strong>Bars</strong></p></div>
           <% end %>
           <%= link_to recs_path(category_id: Category.find_by(name: "landmarks").id) do   %>
-          <i class="fas fa-monument cat_two"></i><div><p><strong>Landmarks</strong></p></div>
+            <i class="fas fa-monument cat_two"></i><div><p><strong>Landmarks</strong></p></div>
           <% end %>
         </div>
       </div>
